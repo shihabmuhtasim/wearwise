@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\AdminSignup;
+use Crypt;
+use Session;
 
 class AdminSignupController extends Controller
 {
@@ -11,15 +13,20 @@ class AdminSignupController extends Controller
         return view('adminpanel\adminsigup');
     }
     public function admin_data_store(Request $request){
-        print_r($request->all());
+        //print_r($request->all());
         $admin_info= new AdminSignup;
         $admin_info->name= $request['Name'];
         $admin_info->phone= $request['phone_number'];
         $admin_info->username= $request['username'];
         $admin_info->email= $request['email'];
-        $admin_info->password= md5($request['password']);
+        $admin_info->password= Crypt::encrypt($request['password']);
         $admin_info->reference_code= $request['ref_code_gen'];
         $admin_info->save();
+        
+        $request->session()->put('admin_info',$request['username']);
+
+
+        return redirect('adminpanel.adminlogin');
 
         
 

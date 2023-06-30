@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminSignupController;
+use App\Http\Controllers\admin_login_controller;
 
 
 /*
@@ -17,3 +18,8 @@ use App\Http\Controllers\AdminSignupController;
 
 Route :: get('/adminsignup',[AdminSignupController::class,'index']);
 Route :: post('/adminsignup',[AdminSignupController::class,'admin_data_store']);
+
+Route :: get('/adminlogin',[admin_login_controller::class,'index']);
+Route :: post('/adminlogin',[admin_login_controller::class,'admin_login']);
+
+Route :: view('welcome','welcome');
