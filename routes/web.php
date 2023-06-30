@@ -23,3 +23,5 @@ Route :: get('/adminlogin',[admin_login_controller::class,'index']);
 Route :: post('/adminlogin',[admin_login_controller::class,'admin_login']);
 
 Route :: view('welcome','welcome');
+Route:: view('admin_dashboard','adminpanel.admin_dashboard');
+

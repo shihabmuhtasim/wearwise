@@ -1,3 +1,5 @@
+@extends('adminpanel/navbar')
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,21 +81,10 @@
 
 </head>
 <body>
-    <!-- navbar -->
-    <?php require("../Log-in/partials/navbar2.php")?>
-    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
-        <div class="container">
-            <img src="../images/logo.jpg" alt="Green Closet Logo" class="logo">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <!--Tasking the name from global variable-->
-                    <a href="" class="nav-link">Welcome <?php echo $_SESSION['name']?></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    
+
         <div class="bg-light">
-            <h1 class="text-center fw-bold" style="color: black; font-family: 'Open Sans', sans-serif;">MANAGE GREEN CLOSET</h1>
+            <h1 class="text-center fw-bold" style="color: black; font-family: 'Open Sans', sans-serif;">MANAGE WEAR WISE</h1>
             <h3 class="text-center p-2">Your business, your way!</h3>
         </div>
 
@@ -129,4 +120,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
 </body>
 </html>
-     
+@stop

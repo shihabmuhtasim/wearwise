@@ -22,7 +22,7 @@ class admin_login_controller extends Controller
 
             $request->session()->put('admin',$request['username']);
 
-            return redirect('welcome');
+            return redirect('admin_dashboard');
         }
 
     }
