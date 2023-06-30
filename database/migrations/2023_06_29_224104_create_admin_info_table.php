@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('email',50);
             $table->string('password',500);
             $table->string('reference_code',50);
+            $table->timestamps();
         });
     }
 
