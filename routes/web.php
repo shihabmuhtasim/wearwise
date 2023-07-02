@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminSignupController;
 use App\Http\Controllers\admin_login_controller;
+use App\Http\Controllers\admin_content_controller;
 
 
 /*
@@ -24,4 +25,14 @@ Route :: post('/adminlogin',[admin_login_controller::class,'admin_login']);
 
 Route :: view('welcome','welcome');
 Route:: view('admin_dashboard','adminpanel.admin_dashboard');
+
+Route :: get('/add_catagory',[admin_content_controller::class,'view_catagory']);
+Route :: post('/add_catagory',[admin_content_controller::class,'add_catagory']);
+Route :: get('/delete_catagory/{id}',[admin_content_controller::class,'delete_catagory']);
+
+Route :: get('/add_apparel',[admin_content_controller::class,'view_apparel']);
+Route :: post('/add_apparel',[admin_content_controller::class,'add_apparel']);
+Route :: get('/delete_apparel/{apparel_id}',[admin_content_controller::class,'delete_apparel']);
+
+
 
