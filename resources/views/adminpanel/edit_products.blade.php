@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
+    <base href="/public">
     @include('adminpanel.css') 
   </head>
   <body>
@@ -50,16 +51,16 @@
         <!-- Product Name-->
         <div class="form-outline mb-2 w-30 m-auto">
             <label for="product_title" style="color: white;" class="form-label fw-bold">Product Name</label>
-            <input type="text" class="form-control" id="product_title" name="product_title" aria-describedby="Product_name_help" placeholder="Enter product name" required="required" autocomplete="on">
+            <input type="text" class="form-control" id="product_title" name="product_title" value="{{$data[0]->product_title}}" aria-describedby="Product_name_help" placeholder="Enter product name" required="required" autocomplete="on">
         </div>
         
         <!-- Category select-->
         <div class="form-outline mb-2 w-30 m-auto">
         <label for="product_category" style="color: white;" class="form-label fw-bold">Product Category</label>
             <select name="product_category" class="form-select" aria-label="Default select example">
-                <option selected>Pick a category</option>
-                @foreach ($cat as $cat)
-                    <option value="{{$cat->id}}">{{$cat->catagory_name}}</option>
+                <option value="{{$data[0]->product_title}}" selected>Pick a category</option>
+                @foreach ($cata as $cata)
+                    <option value="{{$cata->id}}">{{$cata->catagory_name}}</option>
                 @endforeach
             </select>
         </div>
@@ -68,38 +69,39 @@
         <label for="product_apparel" style="color: white;" class="form-label fw-bold">Product Apparel</label>
             <select name="product_apparel" class="form-select" aria-label="Default select example">
             <option selected>Pick an apparel</option>
-            @foreach ($app as $app)
-                    <option value="{{$app->apparel_id}}">{{$app->apparel_name}}</option>
+            @foreach ($appa as $appa)
+                    <option value="{{$appa->apparel_id}}">{{$appa->apparel_name}}</option>
             @endforeach
 
             </select>
         </div>
+
         
         <!-- product_price-->
         <div class="form-outline mb-2 w-30 m-auto">
             <label for="product_price" style="color: white;" class="form-label fw-bold">Product Price </label>
-            <input type="text" class="form-control" id="product_keywords" name="product_price" 
+            <input type="text" class="form-control" id="product_keywords" value="{{$data[0]->price}}" name="product_price" 
             aria-describedby="product_price_help" placeholder="Enter product Price" autocomplete="on" required="required" >
         </div>
 
         <!-- product_discount_price-->
         <div class="form-outline mb-2 w-30 m-auto">
             <label for="product_price" style="color: white;" class="form-label fw-bold">Product Discount Price</label>
-            <input type="text" class="form-control" id="product_keywords" name="product_discount_price" 
+            <input type="text" class="form-control" id="product_keywords" value="{{$data[0]->discounted_price}}" name="product_discount_price" 
             aria-describedby="product_price_help" placeholder="Enter product discount Price" autocomplete="on" required="required" >
         </div>
 
-        <!-- product_price-->
+        <!-- product_days-->
         <div class="form-outline mb-2 w-30 m-auto">
             <label for="product_price" style="color: white;" class="form-label fw-bold">Days </label>
-            <input type="text" class="form-control" id="product_keywords" name="product_days" 
+            <input type="text" class="form-control" value="{{$data[0]->days}}" id="product_keywords" name="product_days" 
             aria-describedby="product_price_help" placeholder="Enter product Price" autocomplete="on" required="required" >
         </div>
 
         <!-- product_quantity-->
         <div class="form-outline mb-2 w-30 m-auto">
             <label for="product_quantity" style="color: white;" class="form-label fw-bold">Product Quantity</label>
-            <input type="text" class="form-control" id="product_quantity" 
+            <input type="text" value="{{$data[0]->quantity}}" class="form-control" id="product_quantity" 
             name="product_quantity"  placeholder="Enter product Quantity" autocomplete="on" required="required">
         </div>
         <!-- Image-->
@@ -111,8 +113,9 @@
         <!-- Product Description-->
         <div class="form-outline mb-2 w-30 m-auto">
             <label for="product_description" style="color: white;" class="form-label fw-bold">Product Description</label>
-            <input type="text" class="form-control" id="product_description" name="product_description" aria-describedby="product_description_help" placeholder="Enter product description" autocomplete="off" required="required">
+            <input type="text"  value="{{$data[0]->product_description}}" class="form-control" id="product_description" name="product_description" aria-describedby="product_description_help" placeholder="Enter product description" autocomplete="off" required="required">
         </div>
+
 
         <!-- Submit-->
         <div class="form-outline mb-4 w-50 m-auto">

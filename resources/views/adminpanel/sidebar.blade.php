@@ -70,14 +70,14 @@
               <span class="menu-icon">
                 <i class="mdi mdi-laptop"></i>
               </span>
-              <span class="menu-title">Basic UI Elements</span>
+              <span class="menu-title">Manage Products</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="admin/pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="admin/pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="admin/pages/ui-features/typography.html">Typography</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('/view_product')}}">Add Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('/show_products')}}">View Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">Approve vendor products</a></li>
               </ul>
             </div>
           </li>
@@ -99,19 +99,28 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="admin/pages/charts/chartjs.html">
+            <a class="nav-link" href=" ">
               <span class="menu-icon">
                 <i class="mdi mdi-chart-bar"></i>
               </span>
-              <span class="menu-title">Charts</span>
+              <span class="menu-title">Customers list</span>
+            </a>
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" href=" ">
+              <span class="menu-icon">
+                <i class="mdi mdi-chart-bar"></i>
+              </span>
+              <span class="menu-title">Orders list</span>
             </a>
           </li>
+
           <li class="nav-item menu-items">
-            <a class="nav-link" href="admin/pages/icons/mdi.html">
+            <a class="nav-link" href=" ">
               <span class="menu-icon">
                 <i class="mdi mdi-contacts"></i>
               </span>
-              <span class="menu-title">Icons</span>
+              <span class="menu-title">Vendor's list</span>
             </a>
           </li>
           <li class="nav-item menu-items">
@@ -119,16 +128,15 @@
               <span class="menu-icon">
                 <i class="mdi mdi-security"></i>
               </span>
-              <span class="menu-title">User Pages</span>
+              <span class="menu-title">Admin's Profile</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="admin/pages/samples/blank-page.html"> Blank Page </a></li>
-                <li class="nav-item"> <a class="nav-link" href="admin/pages/samples/error-404.html"> 404 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="admin/pages/samples/error-500.html"> 500 </a></li>
+                <li class="nav-item"> <a class="nav-link" href=" "> Edit profile </a></li>
+                <li class="nav-item"> <a class="nav-link" href=" "> Logout </a></li>
                 <li class="nav-item"> <a class="nav-link" href="admin/pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="admin/pages/samples/register.html"> Register </a></li>
+                <li class="nav-item"> <a class="nav-link" href="admin/pages/samples/register.html"> Register new account </a></li>
               </ul>
             </div>
           </li>
@@ -137,7 +145,7 @@
               <span class="menu-icon">
                 <i class="mdi mdi-file-document-box"></i>
               </span>
-              <span class="menu-title">Documentation</span>
+              <span class="menu-title">Buisness Home page</span>
             </a>
           </li>
         </ul>
