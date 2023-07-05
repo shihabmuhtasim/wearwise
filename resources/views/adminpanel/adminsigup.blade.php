@@ -101,8 +101,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
     
     
-    
     </div>
+
+    <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">WearWise <br> Wear all wear wise</span>
+
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Contact<br> Email: wearwise@gmail.com <br> Phone: +8801928363 <br>Address: Brac University, Dhaka, Bangldadesh </span>
+            </div>
+          </footer>
   </body>
 </html>
 @stop
