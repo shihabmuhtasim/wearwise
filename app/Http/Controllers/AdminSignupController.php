@@ -13,7 +13,18 @@ class AdminSignupController extends Controller
         return view('adminpanel\adminsigup');
     }
     public function admin_data_store(Request $request){
-        //print_r($request->all());
+        
+        if (Adminsignup::where('username',$request['username'])->exists()){
+            return redirect()->back()->with('message','Username Taken');
+        }
+        elseif  ($request['password'] != $request['cpassword']) {
+            return redirect()->back()->with('message','Password Did not match'); 
+        }
+        elseif  (Adminsignup::where('reference_code',$request['ref_code'])->doesntExist()) {
+            return redirect()->back()->with('message','Reference code Did not match'); 
+        }
+        
+        else{
         $admin_info= new AdminSignup;
         $admin_info->name= $request['Name'];
         $admin_info->phone= $request['phone_number'];
@@ -26,7 +37,7 @@ class AdminSignupController extends Controller
         $request->session()->put('admin_info',$request['username']);
 
 
-        return redirect('adminpanel.adminlogin');
+        return redirect('adminlogin');}
 
         
 

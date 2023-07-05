@@ -45,7 +45,7 @@
     <div class="container ">
         <h1 class="text-center" style="color: white;" >Insert Products</h1> 
         <!--multipart - for adding images-->
-        <form action="{{url('/add_product')}}" method="post" enctype="multipart/form-data">  
+        <form action="{{url('/update_product', $data[0]->product_id)}}" method="post" enctype="multipart/form-data">  
             @csrf
 
         <!-- Product Name-->
@@ -58,7 +58,7 @@
         <div class="form-outline mb-2 w-30 m-auto">
         <label for="product_category" style="color: white;" class="form-label fw-bold">Product Category</label>
             <select name="product_category" class="form-select" aria-label="Default select example">
-                <option value="{{$data[0]->product_title}}" selected>Pick a category</option>
+                <option value="{{$data[0]->catagory_id}}" selected="">Pick a category</option>
                 @foreach ($cata as $cata)
                     <option value="{{$cata->id}}">{{$cata->catagory_name}}</option>
                 @endforeach
@@ -68,7 +68,7 @@
         <div class="form-outline mb-2 w-30 m-auto">
         <label for="product_apparel" style="color: white;" class="form-label fw-bold">Product Apparel</label>
             <select name="product_apparel" class="form-select" aria-label="Default select example">
-            <option selected>Pick an apparel</option>
+            <option value="{{$data[0]->apparel_id}}" selected="">Pick an apparel</option>
             @foreach ($appa as $appa)
                     <option value="{{$appa->apparel_id}}">{{$appa->apparel_name}}</option>
             @endforeach
@@ -106,8 +106,14 @@
         </div>
         <!-- Image-->
         <div class="form-outline mb-2 w-30 m-auto">
+            <label for="product_image" style="color: white;" class="form-label fw-bold">Current Product Image</label>
+            <img  height="100" width="100" src="/added_products/{{$data[0]->image}}" alt="">
+        </div>
+
+
+        <div class="form-outline mb-2 w-30 m-auto">
             <label for="product_image" style="color: white;" class="form-label fw-bold">Product Image</label>
-            <input type="file" class="form-control" id="product_image" name="image" required="required">
+            <input type="file" class="form-control" id="product_image" name="image" >
         </div>
 
         <!-- Product Description-->

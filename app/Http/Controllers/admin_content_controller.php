@@ -99,11 +99,40 @@ class admin_content_controller extends Controller
         $data=products::where('product_id', $product_id)->get();
         $cata= Catagory::all();
         $appa= Apparel::all();
-   
+        return view('adminpanel.edit_products',compact('data', 'cata', 'appa'));
+    }
 
+    public function update_product(Request $request, $product_id){
+        
+        $data=products::find($product_id);
+        $data->product_title= $request->product_title;
+        $data->product_description= $request->product_description;
+        $data->price =$request->product_price;
+        $data->days =$request->product_days;
+        $data->discounted_price= $request->product_discount_price;
+        $data->quantity= $request->product_quantity;
+        $data->catagory_id= $request->product_category;
+        $data->apparel_id= $request->product_apparel;
+        $data->vendor_name= "Wear Wise";
 
+        
+        $image=$request->image;
+        if ($image){
+            
+        $imagename= time().'.'.$image->getClientOriginalExtension();
+        $request->image->move('added_products',$imagename);
+        $data->image=$imagename;
+            
+        }
+        
 
-        return view('adminpanel.edit_products',compact('data'),compact('cata'),compact('appa'));
+        $data->save();
+
+        return redirect()->back()->with('message','Product Updated successfully'); 
+
+        
+    
+        }
     
     }
 
@@ -111,4 +140,4 @@ class admin_content_controller extends Controller
 
 
 
-}		
+

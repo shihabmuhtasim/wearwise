@@ -10,5 +10,8 @@ class products extends Model
 {
     use HasFactory;
     protected $table= "products";
-    protected $primarykey="product_id";
+    public function getKeyName()
+    {
+        return 'product_id';
+    }
 }

@@ -13,7 +13,7 @@
     @include('adminpanel.header')  
     <!-- partial -->
     @include('adminpanel.body')
-        
+    <!--@include('adminpanel.footer')  -->
     <!-- container-scroller -->
     @include('adminpanel.script')
   </body>

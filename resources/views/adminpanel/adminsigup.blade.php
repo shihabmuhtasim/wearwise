@@ -1,3 +1,5 @@
+@extends('adminpanel/navbar')
+@section('content')
 <!-- DESIGNING OF THE PAGE-->
 <!doctype html>
 <html lang="en">
@@ -6,14 +8,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sign Up</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    
   </head>
   <body>
     <!-- connect navbar-->
-    <?//php require "partials/navbar.php"?>
+    
+
+
+    
     
     <!-- HTML bootstrap design -->
     <div class="container">
     <!-- Heading of page -->
+    <style>
+        body {
+          height: 100vh; /* Set the body height to 100% viewport height */
+          overflow: hidden; /* Hide the body's default scrollbar */
+        }
+
+      </style>
+    <div class="content-wrapper">
+    @if(session()->has('message'))
+
+    <div class="alert alert-danger">
+        
+        {{session()->get('message')}}
+
+    </div>
+
+    @endif    
+    
+
+    
     <h1 class="text-center fw-bold" style="color: green; font-family: 'Montserrat', sans-serif;">SIGN UP AS ADMIN</h1>
     <form action="{{url('/')}}/adminsignup" method="post">
 
@@ -65,12 +91,18 @@
             </div>
             </div>
             <!--Sign up button button-->
-            <div class="text-center">
+            <div class="text-center" >
             <button type="submit" class="btn btn-primary bg-success fw-bold">Sign Up as Admin</button>
         </div>
     </form>
 
     </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    
+    
+    
+    </div>
   </body>
 </html>
+@stop

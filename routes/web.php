@@ -42,3 +42,4 @@ Route :: post('/add_product',[admin_content_controller::class,'add_product']);
 Route :: get('/show_products',[admin_content_controller::class,'show_products']);
 Route :: get('/delete_product/{product_id}',[admin_content_controller::class,'delete_product']);
 Route :: get('/edit_product/{product_id}',[admin_content_controller::class,'edit_product']);
+Route :: post('/update_product/{product_id}',[admin_content_controller::class,'update_product']);

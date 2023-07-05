@@ -13,17 +13,34 @@ class admin_login_controller extends Controller
         return view('adminpanel\adminlogin');
     }
     public function admin_login(Request $request){
-    
-        $admin= AdminSignup::where ("username", $request->input('username'))->get();
 
-        $decrepted= Crypt::decrypt($admin[0]->password); 
+        if (Adminsignup::where('username',$request['username'])->doesntExist()){
+            return redirect()->back()->with('message','Wrong username'); 
 
-        if ($decrepted==$request['password']){
-
-            $request->session()->put('admin',$request['username']);
-
-            return redirect('admin_dashboard');
         }
+        else{
+            $admin= AdminSignup::where ("username", $request->input('username'))->get();
+
+            $decrepted= Crypt::decrypt($admin[0]->password); 
+
+            if ($decrepted==$request['password']){
+            
+
+                $request->session()->put('admin',$request['username']);
+    
+                return redirect('admin_dashboard');
+            }
+            else{
+                
+                return redirect()->back()->with('message','Password did not match'); 
+    
+            }
+
+        }
+
+        
+
+        
 
     }
 }
