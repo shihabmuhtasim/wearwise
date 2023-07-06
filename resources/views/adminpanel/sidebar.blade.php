@@ -107,11 +107,11 @@
             </a>
 
           <li class="nav-item menu-items">
-            <a class="nav-link" href=" ">
+            <a class="nav-link" href="{{url('order')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-chart-bar"></i>
               </span>
-              <span class="menu-title">Orders list</span>
+              <span class="menu-title">View Orders</span>
             </a>
           </li>
 
