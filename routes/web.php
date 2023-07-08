@@ -44,3 +44,4 @@ Route :: get('/delete_product/{product_id}',[admin_content_controller::class,'de
 Route :: get('/edit_product/{product_id}',[admin_content_controller::class,'edit_product']);
 Route :: post('/update_product/{product_id}',[admin_content_controller::class,'update_product']);
 Route :: get('/order',[admin_content_controller::class,'order']);
+Route :: get('/Customer',[admin_content_controller::class,'Customer']);

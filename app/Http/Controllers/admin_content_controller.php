@@ -81,12 +81,12 @@ class admin_content_controller extends Controller
     }
 
 
-    // public function show_products(){
-    //     $product_data= products::all();
+    public function show_products(){
+        $product_data= products::all();
        
 
-    //     return view('adminpanel.show_products',compact('product_data'));
-    // }
+        return view('adminpanel.show_products',compact('product_data'));
+    }
 
     public function delete_product($product_id){
 
@@ -139,6 +139,13 @@ class admin_content_controller extends Controller
 
             return view('adminpanel.order');
         }
+
+        public function Customer()
+        {
+
+            return view('adminpanel.Customer');
+        }
+     
 
 
 
