@@ -133,6 +133,25 @@ class admin_content_controller extends Controller
         
     
         }
+
+        public function order()
+        {
+
+            return view('adminpanel.order');
+        }
+
+        public function Customer()
+        {
+
+            return view('adminpanel.Customer');
+        }
+     
+
+
+
+
+
+
     
     }
 
