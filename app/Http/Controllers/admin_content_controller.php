@@ -7,6 +7,8 @@ use App\Models\Catagory;
 use App\Models\Apparel;
 use App\Models\products;
 use App\Models\Customer;
+use App\Models\Order;
+
 
 class admin_content_controller extends Controller
 {
@@ -138,9 +140,11 @@ class admin_content_controller extends Controller
 
         public function order()
         {
-
-            return view('adminpanel.order');
+            $orders = Order::all();
+        
+            return view('adminpanel.order', ['orders' => $orders]);
         }
+        
 
         public function Customer()
         {
