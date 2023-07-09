@@ -99,19 +99,19 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href=" ">
+            <a class="nav-link" href="{{url('Customer')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-chart-bar"></i>
               </span>
-              <span class="menu-title">Customers list</span>
+              <span class="menu-title">View Customers</span>
             </a>
 
           <li class="nav-item menu-items">
-            <a class="nav-link" href=" ">
+            <a class="nav-link" href="{{url('order')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-chart-bar"></i>
               </span>
-              <span class="menu-title">Orders list</span>
+              <span class="menu-title">View Orders</span>
             </a>
           </li>
 
