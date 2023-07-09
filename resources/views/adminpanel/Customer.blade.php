@@ -45,17 +45,28 @@
                             </tr>
                         </thead>
                         <tbody style="background-color: #eaf4f4; color: #333;">
-                            
+                            @foreach($customers as $customer)
                             <tr class="text-center">
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $customer->id }}</td>
+                                <td>{{ $customer->name }}</td>
+                                <td>{{ $customer->email }}</td>
+                                <td>{{ $customer->phone }}</td>
+                                <td>{{ $customer->address }}</td>
+                                <td>{{ $customer->registered_date }}</td>
+                                <td>
+            
+            
+           
+
+                                <!-- Action buttons for customer -->
+           
+                                <!-- Add your action buttons here -->
+                                </td>
+    
                             </tr>
-                            
+    
+                            @endforeach
+
                         </tbody>
                     </table>
                 </div>
