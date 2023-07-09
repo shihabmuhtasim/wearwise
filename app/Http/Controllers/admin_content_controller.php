@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Catagory;
 use App\Models\Apparel;
 use App\Models\products;
+use App\Models\Customer;
+
 class admin_content_controller extends Controller
 {
     public function view_catagory(){
@@ -142,8 +144,9 @@ class admin_content_controller extends Controller
 
         public function Customer()
         {
-
-            return view('adminpanel.Customer');
+            $customers = Customer::all();
+        
+            return view('adminpanel.Customer', ['customers' => $customers]);
         }
      
 

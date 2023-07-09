@@ -45,66 +45,28 @@
                             </tr>
                         </thead>
                         <tbody style="background-color: #eaf4f4; color: #333;">
+                            @foreach($customers as $customer)
                             <tr class="text-center">
-                                <td>1</td>
-                                <td>John Doe</td>
-                                <td>johndoe@example.com</td>
-                                <td>1234567890</td>
-                                <td>123 Main St, City</td>
-                                <td>2023-06-01</td>
+                                <td>{{ $customer->id }}</td>
+                                <td>{{ $customer->name }}</td>
+                                <td>{{ $customer->email }}</td>
+                                <td>{{ $customer->phone }}</td>
+                                <td>{{ $customer->address }}</td>
+                                <td>{{ $customer->registered_date }}</td>
                                 <td>
-                                    <!-- Action buttons for customer -->
-                                    <!-- Add your action buttons here -->
+            
+            
+           
+
+                                <!-- Action buttons for customer -->
+           
+                                <!-- Add your action buttons here -->
                                 </td>
+    
                             </tr>
-                            <tr class="text-center">
-                                <td>2</td>
-                                <td>Jane Smith</td>
-                                <td>janesmith@example.com</td>
-                                <td>9876543210</td>
-                                <td>456 Elm St, City</td>
-                                <td>2023-05-15</td>
-                                <td>
-                                    <!-- Action buttons for customer -->
-                                    <!-- Add your action buttons here -->
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>3</td>
-                                <td>Michael Johnson</td>
-                                <td>michaeljohnson@example.com</td>
-                                <td>5555555555</td>
-                                <td>789 Oak St, City</td>
-                                <td>2023-04-22</td>
-                                <td>
-                                    <!-- Action buttons for customer -->
-                                    <!-- Add your action buttons here -->
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>4</td>
-                                <td>Sarah Wilson</td>
-                                <td>sarahwilson@example.com</td>
-                                <td>1112223333</td>
-                                <td>321 Pine St, City</td>
-                                <td>2023-03-10</td>
-                                <td>
-                                    <!-- Action buttons for customer -->
-                                    <!-- Add your action buttons here -->
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>5</td>
-                                <td>Robert Davis</td>
-                                <td>robertdavis@example.com</td>
-                                <td>4446668888</td>
-                                <td>567 Cedar St, City</td>
-                                <td>2023-02-05</td>
-                                <td>
-                                    <!-- Action buttons for customer -->
-                                    <!-- Add your action buttons here -->
-                                </td>
-                            </tr>
+    
+                            @endforeach
+
                         </tbody>
                     </table>
                 </div>
