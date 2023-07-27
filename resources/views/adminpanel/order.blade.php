@@ -48,7 +48,7 @@
                         </thead>
                         <tbody style="background-color: #eaf4f4; color: #333;">
     
-                             @foreach($orders as $order)
+    @foreach($orders as $order)
     <tr class="text-center">
         <td>{{ $order->id }}</td>
         <td>{{ $order->product }}</td>
