@@ -22,6 +22,7 @@ class admin_content_controller extends Controller
         
             }
         }
+
     
 
     public function view_catagory(){
@@ -163,26 +164,17 @@ class admin_content_controller extends Controller
         
         public function order()
         {
-<<<<<<< HEAD
-            return view('adminpanel.order');
-            
-=======
             $orders = Order::all();
         
             return view('adminpanel.order', ['orders' => $orders]);
->>>>>>> 4e90aa41e8ffacc4541f62afb809545fc5e5280e
         }
         
 
         public function Customer()
         {
-<<<<<<< HEAD
-            return view('adminpanel.Customer');
-=======
             $customers = Customer::all();
         
             return view('adminpanel.Customer', ['customers' => $customers]);
->>>>>>> 4e90aa41e8ffacc4541f62afb809545fc5e5280e
         }
      
 
