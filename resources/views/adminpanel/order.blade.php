@@ -47,23 +47,25 @@
                             </tr>
                         </thead>
                         <tbody style="background-color: #eaf4f4; color: #333;">
-                            
-                            <tr class="text-center">
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                   
-                
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                    
-                            </tr>
-                            
-                        </tbody>
+    
+                             @foreach($orders as $order)
+    <tr class="text-center">
+        <td>{{ $order->id }}</td>
+        <td>{{ $order->product }}</td>
+        <td><img src="{{ $order->image }}" alt="{{ $order->product }}" class="product-image"></td>
+        <td>${{ $order->price }}</td>
+        <td>{{ $order->quantity }}</td>
+        <td>{{ $order->customer }}</td>
+        <td>{{ $order->ordered_date }}</td>
+        <td>{{ $order->status }}</td>
+        <td>
+            <!-- Action buttons for order -->
+            <!-- Add your action buttons here -->
+        </td>
+    </tr>
+    @endforeach
+</tbody>
+
                     </table>
                 </div>
             </div>
