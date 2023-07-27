@@ -9,7 +9,9 @@
                         <img src="admin/assets/images/dashboard/Group126@2x.png" class="gradient-corona-img img-fluid" alt="">
                       </div>
                       <div class="col-5 col-sm-7 col-xl-8 p-0">
+                        <h5>HELLO, {{session('admin')}}</h5>
                         <h4 class="mb-1 mb-sm-0">WELCOME TO WEAR WISE</h4>
+                      
                         <p class="mb-0 font-weight-normal d-none d-sm-block">Get started managing your buisness</p>
                       </div>
                       <div class="col-3 col-sm-2 col-xl-2 pl-0 text-center">

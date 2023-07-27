@@ -8,6 +8,18 @@ use App\Models\Apparel;
 use App\Models\products;
 class admin_content_controller extends Controller
 {
+
+    public function index(){
+            if (session()->has('admin')) {
+          
+                return view('adminpanel.admin_dashboard');
+            } else {
+                return redirect('adminlogin')->with('message', 'Please login to access the admin dashboard.');
+        
+            }
+        }
+    
+
     public function view_catagory(){
         $data= Catagory::all();
         return view('adminpanel.add_catagory', compact('data'));
@@ -31,6 +43,7 @@ class admin_content_controller extends Controller
 
 
     public function view_apparel(){
+
         $data= Apparel::all();
         return view('adminpanel.add_apparel',compact('data'));
     }
@@ -52,10 +65,18 @@ class admin_content_controller extends Controller
 
 
     public function view_product(){
+        if (session()->has('admin')) {
+          
         $cat= Catagory::all();
         $app= Apparel::all();
 
         return view('adminpanel.add_product',compact('cat'),compact('app'));
+        } 
+        else {
+            return redirect('adminlogin')->with('message', 'Please login to access the admin panel features.');
+    
+        }
+        
     }
 
     public function add_product(Request $request){
@@ -134,21 +155,30 @@ class admin_content_controller extends Controller
     
         }
 
+
+        
         public function order()
         {
-
             return view('adminpanel.order');
+            
         }
 
         public function Customer()
         {
-
             return view('adminpanel.Customer');
         }
      
 
-
-
+//test
+        public function view_test1(){
+            if (session()->has('user')) {
+          
+                return view('test1');
+            } else {
+                return redirect('userlogin')->with('message', 'Please login to access the admin dashboard.');
+        
+            }
+        }
 
 
 
