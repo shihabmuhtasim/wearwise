@@ -12,6 +12,7 @@ class AdminSignupController extends Controller
     public function index(){
         return view('adminpanel\adminsigup');
     }
+
     public function admin_data_store(Request $request){
         
         if (Adminsignup::where('username',$request['username'])->exists()){

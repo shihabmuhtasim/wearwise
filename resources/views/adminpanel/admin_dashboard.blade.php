@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+  
   <head>
+    
     <!-- Required meta tags -->
     @include('adminpanel.css') 
   </head>

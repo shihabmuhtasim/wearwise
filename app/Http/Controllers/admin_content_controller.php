@@ -12,6 +12,18 @@ use App\Models\Order;
 
 class admin_content_controller extends Controller
 {
+
+    public function index(){
+            if (session()->has('admin')) {
+          
+                return view('adminpanel.admin_dashboard');
+            } else {
+                return redirect('adminlogin')->with('message', 'Please login to access the admin dashboard.');
+        
+            }
+        }
+    
+
     public function view_catagory(){
         $data= Catagory::all();
         return view('adminpanel.add_catagory', compact('data'));
@@ -35,6 +47,7 @@ class admin_content_controller extends Controller
 
 
     public function view_apparel(){
+
         $data= Apparel::all();
         return view('adminpanel.add_apparel',compact('data'));
     }
@@ -56,10 +69,18 @@ class admin_content_controller extends Controller
 
 
     public function view_product(){
+        if (session()->has('admin')) {
+          
         $cat= Catagory::all();
         $app= Apparel::all();
 
         return view('adminpanel.add_product',compact('cat'),compact('app'));
+        } 
+        else {
+            return redirect('adminlogin')->with('message', 'Please login to access the admin panel features.');
+    
+        }
+        
     }
 
     public function add_product(Request $request){
@@ -138,24 +159,43 @@ class admin_content_controller extends Controller
     
         }
 
+
+        
         public function order()
         {
+<<<<<<< HEAD
+            return view('adminpanel.order');
+            
+=======
             $orders = Order::all();
         
             return view('adminpanel.order', ['orders' => $orders]);
+>>>>>>> 4e90aa41e8ffacc4541f62afb809545fc5e5280e
         }
         
 
         public function Customer()
         {
+<<<<<<< HEAD
+            return view('adminpanel.Customer');
+=======
             $customers = Customer::all();
         
             return view('adminpanel.Customer', ['customers' => $customers]);
+>>>>>>> 4e90aa41e8ffacc4541f62afb809545fc5e5280e
         }
      
 
-
-
+//test
+        public function view_test1(){
+            if (session()->has('user')) {
+          
+                return view('test1');
+            } else {
+                return redirect('userlogin')->with('message', 'Please login to access the admin dashboard.');
+        
+            }
+        }
 
 
 
