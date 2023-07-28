@@ -1,6 +1,8 @@
 # WearWise - CSE471 Project
 
-<p align="center"><img src="https://your-website-url.com/images/wearwise-logo.png" width="400" alt="WearWise Logo"></p>
+<p align="center"><img src="![logo](https://github.com/shihabmuhtasim/wearwise/assets/92597456/dffe8225-566e-474f-8c09-41542b2ae16d)
+"></p>
+![logo](https://github.com/shihabmuhtasim/wearwise/assets/92597456/dffe8225-566e-474f-8c09-41542b2ae16d)
 
 ## Introduction
 
@@ -82,7 +84,7 @@ Welcome to WearWise, an innovative e-commerce website developed as part of the C
 
 - [Shihab Muhtasim](https://github.com/shihabmuhtasim) - Module 1, module 4, Login & session handelling
 - [Nusaiba Alam](https://github.com/contributor1) - Module 2, User orders managing
-- [Contributor 2](https://github.com/contributor2) - Module 3
+- [Sartaj](https://github.com/contributor2) - Module 3
 
 ## License
 
