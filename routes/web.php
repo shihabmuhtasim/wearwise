@@ -5,7 +5,9 @@ use App\Http\Controllers\AdminSignupController;
 use App\Http\Controllers\admin_login_controller;
 use App\Http\Controllers\UserSignupController;
 
+//Nusaiba 
 
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -101,3 +103,11 @@ Route :: get('/userlogout', function(){
     
 });
 
+//Nusaiba Module 2
+Route::get('/', [HomeController::class, 'index']);
+
+route::get('/redirect',[HomeController::class,'redirect']);
+
+route::get('/product_details/{product_id}',[HomeController::class,'product_details']);
+
+route::post('/add_cart/{product_id}',[HomeController::class,'add_cart']);
