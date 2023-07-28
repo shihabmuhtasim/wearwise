@@ -32,7 +32,7 @@
       <div class="col-sm-6 col-md-4 col-lg-4" style="margin: auto; width: 50%; padding: 30px">
                   
                      <div class="img-box" style="padding: 20px">
-                     <img src="{{ asset('images/' . $product->image) }}" alt="">
+                     <img src="{{ asset('added_products/' . $product->image) }}" alt="">
 
                      </div>
                      <div class="detail-box">
@@ -68,7 +68,10 @@
                         <h6>Product Details : {{$product->product_description}}</h6>
                         <h6>Available Quantity : {{$product->quantity}}</h6>
 
-                        <form action="{{url('add_cart',$product->product_id)}}" method="Post">
+
+                        <h8>{{ session('user') }}</h8>
+
+                        <form action="{{url('add_cart',$product->product_id )}}" method="Post">
                               @csrf
                               <div class="row">
                                  <div class="col-md-4">
@@ -79,6 +82,11 @@
                                  </div>
                               </div>
                            </form>
+
+   
+
+
+
 
                         
                      </div>

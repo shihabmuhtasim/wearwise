@@ -32,24 +32,73 @@
                            </button>
                         </form>
 
-                        @if (Route::has('login'))
 
-                        @auth
 
                         <li class="nav-item">
-                           <a class="btn btn-primary" id="logincss" href="{{ route('login') }}">logout</a>
+                           <a class="btn btn-primary" id="logincss" href="{{url('/userlogout')}}">logout</a>
                         </li>
 
-                        @else
-                        <li class="nav-item">
-                           <a class="btn btn-primary" id="logincss" href="{{ route('login') }}">Login</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="btn btn-success" href="{{ route('register') }}">Register</a>
-                        </li>
-                        @endauth
 
-                        @endif
+
+
+                        <li class="nav-item dropdown border-left">
+  <a class="nav-link count-indicator dropdown-toggle" id="accountOptionsDropdown" href="#" data-toggle="dropdown">
+    <!-- Change the icon here (e.g., to a key icon) -->
+    <i class="mdi mdi-key"></i>
+    <span class="count bg-danger"></span>
+  </a>
+  <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="accountOptionsDropdown">
+    <h6 class="p-3 mb-0">Other Account options</h6>
+    <div class="dropdown-divider"></div>
+    <!-- Add options for user login, user sign up, vendor login, and vendor signup -->
+    <a class="dropdown-item preview-item" href="{{url('/adminlogin')}}">
+      <div class="preview-thumbnail">
+        <div class="preview-icon bg-dark rounded-circle">
+          <i class="mdi mdi-login text-success"></i>
+        </div>
+      </div>
+      <div class="preview-item-content">
+        <p class="preview-subject mb-1">Admin Login</p>
+        <p class="text-muted ellipsis mb-0"> Click here to log in as a user </p>
+      </div>
+    </a>
+    <a class="dropdown-item preview-item" href="{{url('/adminsignup')}}">
+      <div class="preview-thumbnail">
+        <div class="preview-icon bg-dark rounded-circle">
+          <i class="mdi mdi-account-plus text-primary"></i>
+        </div>
+      </div>
+      <div class="preview-item-content">
+        <p class="preview-subject mb-1">Admin Sign Up</p>
+        <p class="text-muted ellipsis mb-0"> New user? Sign up here </p>
+      </div>
+    </a>
+    <a class="dropdown-item preview-item" href="{{url('/vendorlogin')}}">
+      <div class="preview-thumbnail">
+        <div class="preview-icon bg-dark rounded-circle">
+          <i class="mdi mdi-login-variant text-warning"></i>
+        </div>
+      </div>
+      <div class="preview-item-content">
+        <p class="preview-subject mb-1">Vendor Login</p>
+        <p class="text-muted ellipsis mb-0"> Click here to log in as a vendor </p>
+      </div>
+    </a>
+    <a class="dropdown-item preview-item" href="{{url('/vendorsignup')}}">
+      <div class="preview-thumbnail">
+        <div class="preview-icon bg-dark rounded-circle">
+          <i class="mdi mdi-account-plus text-danger"></i>
+        </div>
+      </div>
+      <div class="preview-item-content" >
+        <p class="preview-subject mb-1">Vendor Sign Up</p>
+        <p class="text-muted ellipsis mb-0"> New vendor? Sign up here </p>
+      </div>
+    </a>
+</li>
+                     
+
+     
                         <li class="nav-item">
                            <a class="nav-link" href="#">
                               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">

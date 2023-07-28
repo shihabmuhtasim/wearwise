@@ -10,26 +10,14 @@ use App\Models\Cart;
 class HomeController extends Controller
 {
     public function index()
-    {
+    {   
+        $store =session('user');
+        print_r($store);
         $product=products::paginate(2);
         return view('home.userpage',compact('product'));
     }
 
-    public function redirect()
-    {
-        $usertype=Auth::user()->usertype;
-
-        if($usertype=='1')
-        {
-            return view('admin.home');
-        }
-
-        else
-        {
-            $product=products::paginate(1);
-        return view('home.userpage',compact('product'));
-        }
-    }
+    
 
     public function product_details($product_id)
     {
@@ -40,7 +28,7 @@ class HomeController extends Controller
 
 
     public function add_cart(Request $request,$product_id)
-    {
+    { 
         if(Auth::id())
         {
             $user=Auth::user();

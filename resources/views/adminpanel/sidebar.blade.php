@@ -93,14 +93,24 @@
             </a>
           </li>
 
-          <li class="nav-item menu-items">
-            <a class="nav-link" href=" ">
+          <li class="nav-item menu-items" >
+            <a class="nav-link" href="{{url('show_vendors')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-contacts"></i>
               </span>
-              <span class="menu-title">Vendor's list</span>
+              <span class="menu-title">Approve vendors</span>
             </a>
           </li>
+
+          <li class="nav-item menu-items" >
+            <a class="nav-link" href="{{url('final_vendors')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-contacts"></i>
+              </span>
+              <span class="menu-title">Certified vendors</span>
+            </a>
+          </li>
+
           <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <span class="menu-icon">

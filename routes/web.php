@@ -69,6 +69,8 @@ Route::middleware(['admin.auth'])->group(function () {
     Route :: get('/show_vendors',[admin_content_controller::class,'show_vendors']);
     Route :: get('/delete_vendor/{id}',[admin_content_controller::class,'delete_vendor']);
     Route :: get('/approve_vendor/{id}',[admin_content_controller::class,'approve_vendor']);
+    Route :: get('/final_vendors',[admin_content_controller::class,'final_vendors']);
+    Route :: get('/delete_f_vendor/{id}',[admin_content_controller::class,'delete_f_vendor']);
     //Sartaj
     Route :: get('/order',[admin_content_controller::class,'order']);
     Route :: get('/Customer',[admin_content_controller::class,'Customer']);
@@ -91,6 +93,8 @@ Route::middleware(['user.auth'])->group(function () {
 
     
     Route :: get('/test1',[admin_content_controller::class,'view_test1']);
+    route::post('/add_cart/{product_id,username}',[HomeController::class,'add_cart']);
+    Route::get('/', [HomeController::class, 'index']);
     
     });
 
@@ -105,13 +109,10 @@ Route :: get('/userlogout', function(){
 
 
 //Nusaiba Module 2
-Route::get('/', [HomeController::class, 'index']);
-
-route::get('/redirect',[HomeController::class,'redirect']);
 
 route::get('/product_details/{product_id}',[HomeController::class,'product_details']);
 
-route::post('/add_cart/{product_id}',[HomeController::class,'add_cart']);
+
 
 //module 4 vendor Shihab
 Route :: get('/vendorsignup',[VendorSignupController::class,'index']);
