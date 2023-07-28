@@ -41,7 +41,7 @@ class VendorSignupController extends Controller
             $request->session()->put('vendor_info',$request['username']);
     
     
-            return redirect('vendorsignup')->with('message','Account created successfully');
+            return redirect('vendorsignup')->with('message','Account submitted for approval successfully');
         }
 }
 

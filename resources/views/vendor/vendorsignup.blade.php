@@ -30,7 +30,7 @@
     <div class="content-wrapper">
     @if(session()->has('message'))
 
-    <div class="alert alert-danger">
+    <div class="alert alert-info">
         
         {{session()->get('message')}}
 
@@ -100,7 +100,7 @@
             </div>
             <!--Sign up button button-->
             <div class="text-center" >
-            <button type="submit" class="btn btn-primary bg-success fw-bold">Sign Up as Admin</button>
+            <button type="submit" class="btn btn-primary bg-success fw-bold">Sign Up as Vendor</button>
         </div>
     </form>
 

@@ -34,11 +34,11 @@
             <li class="nav-item">
                     <a class="nav-link" href="adminsignup" style="font-weight: bold;">Admin Signup</a>
               </li>
-              <a class="nav-link" href="adminlogin" style="font-weight: bold;"> Vendor Login</a>
+              <a class="nav-link" href="vendorlogin" style="font-weight: bold;"> Vendor Login</a>
             </li>
           
             <li class="nav-item">
-                    <a class="nav-link" href="adminsignup" style="font-weight: bold;">Vendor Signup</a>
+                    <a class="nav-link" href="vendorsignup" style="font-weight: bold;">Vendor Signup</a>
               </li>      
       </ul>
     </div>
