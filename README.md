@@ -1,7 +1,6 @@
 # WearWise - CSE471 Project
 
-<p align="center"><img src="![logo](https://github.com/shihabmuhtasim/wearwise/assets/92597456/dffe8225-566e-474f-8c09-41542b2ae16d)
-"></p>
+
 ![logo](https://github.com/shihabmuhtasim/wearwise/assets/92597456/dffe8225-566e-474f-8c09-41542b2ae16d)
 
 ## Introduction
