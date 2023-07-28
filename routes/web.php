@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminSignupController;
 use App\Http\Controllers\admin_login_controller;
 use App\Http\Controllers\UserSignupController;
+use App\Http\Controllers\VendorSignupController;
 
 //Nusaiba 
 
@@ -23,12 +24,13 @@ use App\Http\Controllers\HomeController;
 
 
 //Shihab
+
 Route :: get('/adminsignup',[AdminSignupController::class,'index']);
 Route :: post('/adminsignup',[AdminSignupController::class,'admin_data_store']);
 
 Route :: get('/adminlogin',[admin_login_controller::class,'index']);
 Route :: post('/adminlogin',[admin_login_controller::class,'admin_login']);
-Route :: post('/userlogin',[UserSignupController::class,'user_login']);
+
 
 Route :: get('/logout', function(){
     if (session()->has('admin')) {
@@ -64,32 +66,30 @@ Route::middleware(['admin.auth'])->group(function () {
     Route :: get('/edit_product/{product_id}',[admin_content_controller::class,'edit_product']);
     Route :: post('/update_product/{product_id}',[admin_content_controller::class,'update_product']);
     
+    Route :: get('/show_vendors',[admin_content_controller::class,'show_vendors']);
+    Route :: get('/delete_vendor/{id}',[admin_content_controller::class,'delete_vendor']);
+    Route :: get('/approve_vendor/{id}',[admin_content_controller::class,'approve_vendor']);
     //Sartaj
     Route :: get('/order',[admin_content_controller::class,'order']);
     Route :: get('/Customer',[admin_content_controller::class,'Customer']);
 
-
-
-
-
-
 });
 
 
-//Shihab module 2
+//Shihab module 2 logins
 Route :: get('/usersignup',[UserSignupController::class,'index']);
 Route :: post('/usersignup',[UserSignupController::class,'user_data_store']);
 
 Route :: get('/userlogin',[UserSignupController::class,'get_login']);
+Route :: post('/userlogin',[UserSignupController::class,'user_login']);
 
 
 
-
-//test auth
+//test auth user
 
 Route::middleware(['user.auth'])->group(function () {
 
-    Route :: view('welcome','welcome');
+    
     Route :: get('/test1',[admin_content_controller::class,'view_test1']);
     
     });
@@ -100,8 +100,9 @@ Route :: get('/userlogout', function(){
         session()->pull('user');
         return redirect('userlogin');
     }
-    
+
 });
+
 
 //Nusaiba Module 2
 Route::get('/', [HomeController::class, 'index']);
@@ -111,3 +112,27 @@ route::get('/redirect',[HomeController::class,'redirect']);
 route::get('/product_details/{product_id}',[HomeController::class,'product_details']);
 
 route::post('/add_cart/{product_id}',[HomeController::class,'add_cart']);
+
+//module 4 vendor Shihab
+Route :: get('/vendorsignup',[VendorSignupController::class,'index']);
+Route :: post('/vendorsignup',[VendorSignupController::class,'vendor_data_store']);
+
+Route :: get('/vendorlogin',[VendorSignupController::class,'get_login']);
+Route :: post('/vendorlogin',[VendorSignupController::class,'vendor_login']);
+
+Route::middleware(['vendor.auth'])->group(function () {
+
+    Route :: get('/test2',[admin_content_controller::class,'view_test2']);
+
+    Route :: view('welcome','welcome');
+    
+    });
+
+    Route :: get('/vendorlogout', function(){
+        if (session()->has('vendor')) {
+            session()->pull('vendor');
+            return redirect('vendorlogin');
+        }
+    
+    });
+
