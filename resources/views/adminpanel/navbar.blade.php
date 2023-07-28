@@ -22,11 +22,11 @@
         </li>
 
         <li class="nav-item">
-              <a class="nav-link" href="adminlogin" style="font-weight: bold;">Login</a>
+              <a class="nav-link" href="userlogin" style="font-weight: bold;">Login</a>
             </li>
           
             <li class="nav-item">
-                    <a class="nav-link" href="adminsignup" style="font-weight: bold;">Signup</a>
+                    <a class="nav-link" href="usersignup" style="font-weight: bold;">Signup</a>
               </li>
               <a class="nav-link" href="adminlogin" style="font-weight: bold;">Admin Login</a>
             </li>

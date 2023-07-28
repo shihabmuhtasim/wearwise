@@ -8,7 +8,8 @@ use App\Models\Apparel;
 use App\Models\products;
 use App\Models\Customer;
 use App\Models\Order;
-
+use App\Models\VendorSignup;
+use App\Models\final_vendors;
 
 class admin_content_controller extends Controller
 {
@@ -189,7 +190,56 @@ class admin_content_controller extends Controller
             }
         }
 
+        public function view_test2(){
+            if (session()->has('vendor')) {
+          
+                return view('test2');
+            } else {
+                return redirect('vendorlogin')->with('message', 'Please login to access the admin dashboard.');
+        
+            }
+        }
 
+        public function show_vendors(){
+            $vendor_data= VendorSignup::all();
+    
+            return view('adminpanel.show_vendors',compact('vendor_data'));
+        }
+
+        public function delete_vendor($vendor_id){
+
+            $data=VendorSignup::where('id', $vendor_id);
+            $data->delete();
+            return redirect()->back()->with('message','vendor Deleted successfully');    
+            }
+
+            public function approve_vendor($vendor_id) {
+                // Retrieve the data from the VendorSignup model
+                $vendorData = VendorSignup::where('id', $vendor_id)->first();
+            
+                if ($vendorData) {
+                    // Create a new instance of the FinalVendors model
+                    $data = new final_vendors;
+            
+                    // Assign the properties from the $vendorData object
+                    $data->name = $vendorData->name;
+                    $data->phone = $vendorData->phone;
+                    $data->username = $vendorData->username;
+                    $data->email = $vendorData->email;
+                    $data->password = $vendorData->password;
+                    $data->buisness_name = $vendorData->buisness_name;
+                    $data->address = $vendorData->address;
+                    $data->buisness_lisence_no = $vendorData->buisness_lisence_no;
+            
+                    $data->save();
+                    $vendorData->delete();
+            
+                    return redirect()->back()->with('message', 'Vendor Approved successfully');
+                } else {
+                    // Handle the case when the vendor data with the given ID is not found
+                    return redirect()->back()->with('error', 'Vendor data not found');
+                }
+            }
 
     
     }
