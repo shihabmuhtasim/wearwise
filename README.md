@@ -1,66 +1,96 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# WearWise - CSE471 Project
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+![logo](https://github.com/shihabmuhtasim/wearwise/assets/92597456/dffe8225-566e-474f-8c09-41542b2ae16d)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Introduction
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Welcome to WearWise, an innovative e-commerce website developed as part of the CSE471 course project for Section 07, Group 03. WearWise offers a convenient platform for users to buy and sell a wide range of trendy apparel items. This README provides an overview of the website's features and modules.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Project Details
 
-## Learning Laravel
+- Course: CSE471
+- Section: 07
+- Group: 03
+- Project Name: WearWise
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Modules
 
-## Laravel Sponsors
+### Module 1: Admin Panel
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- **Login & Registration:** Admin authentication for secure access.
+- **Logout & Session Management:** Ensuring user sessions are handled correctly on all pages.
+- **Product Management:**
+  - Add Product: Ability to add new products to the website.
+  - View, Edit & Delete Product: Admins can manage product details efficiently.
+- **Category & Apparel Management:**
+  - Add, Edit & Delete Category & Apparel: Convenient management of categories and apparel types.
+  - View Category & Apparel: Displaying category and apparel details.
+- **Admin Interface:**
+  - Sidebar & Header: User-friendly navigation for admin tasks.
+  - Dashboard Features: Key statistics and information for efficient management.
+  - View Orders & Customers: Access to order and customer information for effective tracking.
 
-### Premium Partners
+### Module 2: Home / Shop
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- **Homepage Products Display:** Showcasing featured products on the website's home page.
+- **Products Page:**
+  - Size, Description, Price, Days, Vendor Name Display: Providing detailed product information.
+  - Sort Products: Ability to sort products by category and apparel.
+  - Search Products: Easy search functionality with sorting by price low to high.
+- **Cart:**
+  - Update, Delete & Checkout: Smooth cart management for users.
+  - IP Handling: Ensuring secure and accurate order processing.
+- **Customer Review:**
+  - Add & Show Reviews: Enabling customers to add and view product reviews.
+- **User Authentication:**
+  - User Login & Logout: Secure authentication for users.
+  - User Registration: New users can register on the website.
+  - Session Management: Proper handling of user sessions on all pages.
 
-## Contributing
+### Module 3: User Dashboard
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- **View Profile:** Users can access and view their profile information.
+- **Payment Gateway Implementation:** Secure payment processing for orders.
+- **Order Confirmation:** Providing users with order confirmation details.
+- **Edit Profile:** Users can update their profile information.
+- **Order Management:**
+  - View Orders: Users can check their order history.
+  - View Return Dates: Displaying return dates of ordered items.
 
-## Code of Conduct
+### Module 4: Vendor Management
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- **Vendor Registration:** Vendors can register on the website (approval from admin required).
+- **Vendor Authentication:**
+  - Vendor Login & Logout: Secure authentication for vendors.
+  - Session Management: Proper handling of vendor sessions on all pages.
+- **Product Submission:**
+  - Post Product for Approval: Vendors can submit products for admin approval.
+- **Order Management:**
+  - View Orders: Vendors can view their order details.
+- **Vendor Interface:**
+  - Dashboard, Sidebar & Navbar: Convenient navigation for vendor tasks.
+  - Admin Panel Interaction:
+    - Vendor Account Request: Admins can approve or delete vendor account requests.
+    - View & Remove Vendors: Admins can manage vendor accounts.
+    - Product Post Requests: Admins can view and approve/reject vendor product submissions.
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+## Contributors
+
+- [Shihab Muhtasim](https://github.com/shihabmuhtasim) - Module 1, module 4, Login & session handelling
+- [Nusaiba Alam](https://github.com/contributor1) - Module 2, User orders managing
+- [Sartaj](https://github.com/contributor2) - Module 3
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+---
+
+Thank you for your interest in WearWise. For any questions or feedback, please feel free to contact us. Happy coding!
+
+

@@ -17,7 +17,7 @@
     <!-- Heading -->
     @if(session()->has('message'))
 
-<div class="alert alert-danger">
+<div class="alert alert-info">
     
     {{session()->get('message')}}
 
