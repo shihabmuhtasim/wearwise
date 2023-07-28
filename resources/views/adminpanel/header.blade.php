@@ -50,59 +50,61 @@
                     </div>
                   </a>
               </li>
-              <li class="nav-item nav-settings d-none d-lg-block">
-                <a class="nav-link" href="#">
-                  <i class="mdi mdi-view-grid"></i>
-                </a>
-              </li>
-              
               <li class="nav-item dropdown border-left">
-                <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-                  <i class="mdi mdi-bell"></i>
-                  <span class="count bg-danger"></span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                  <h6 class="p-3 mb-0">Notifications</h6>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-calendar text-success"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Event today</p>
-                      <p class="text-muted ellipsis mb-0"> Just a reminder that you have an event today </p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-settings text-danger"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Settings</p>
-                      <p class="text-muted ellipsis mb-0"> Update dashboard </p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-link-variant text-warning"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Launch Admin</p>
-                      <p class="text-muted ellipsis mb-0"> New admin wow! </p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <p class="p-3 mb-0 text-center">See all notifications</p>
-                </div>
-              </li>
+  <a class="nav-link count-indicator dropdown-toggle" id="accountOptionsDropdown" href="#" data-toggle="dropdown">
+    <!-- Change the icon here (e.g., to a key icon) -->
+    <i class="mdi mdi-key"></i>
+    <span class="count bg-danger"></span>
+  </a>
+  <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="accountOptionsDropdown">
+    <h6 class="p-3 mb-0">Other Account options</h6>
+    <div class="dropdown-divider"></div>
+    <!-- Add options for user login, user sign up, vendor login, and vendor signup -->
+    <a class="dropdown-item preview-item" href="{{url('/userlogin')}}">
+      <div class="preview-thumbnail">
+        <div class="preview-icon bg-dark rounded-circle">
+          <i class="mdi mdi-login text-success"></i>
+        </div>
+      </div>
+      <div class="preview-item-content">
+        <p class="preview-subject mb-1">User Login</p>
+        <p class="text-muted ellipsis mb-0"> Click here to log in as a user </p>
+      </div>
+    </a>
+    <a class="dropdown-item preview-item" href="{{url('/usersignup')}}">
+      <div class="preview-thumbnail">
+        <div class="preview-icon bg-dark rounded-circle">
+          <i class="mdi mdi-account-plus text-primary"></i>
+        </div>
+      </div>
+      <div class="preview-item-content">
+        <p class="preview-subject mb-1">User Sign Up</p>
+        <p class="text-muted ellipsis mb-0"> New user? Sign up here </p>
+      </div>
+    </a>
+    <a class="dropdown-item preview-item" href="{{url('/vendorlogin')}}">
+      <div class="preview-thumbnail">
+        <div class="preview-icon bg-dark rounded-circle">
+          <i class="mdi mdi-login-variant text-warning"></i>
+        </div>
+      </div>
+      <div class="preview-item-content">
+        <p class="preview-subject mb-1">Vendor Login</p>
+        <p class="text-muted ellipsis mb-0"> Click here to log in as a vendor </p>
+      </div>
+    </a>
+    <a class="dropdown-item preview-item" href="{{url('/vendorsignup')}}">
+      <div class="preview-thumbnail">
+        <div class="preview-icon bg-dark rounded-circle">
+          <i class="mdi mdi-account-plus text-danger"></i>
+        </div>
+      </div>
+      <div class="preview-item-content" >
+        <p class="preview-subject mb-1">Vendor Sign Up</p>
+        <p class="text-muted ellipsis mb-0"> New vendor? Sign up here </p>
+      </div>
+    </a>
+</li>
               <li class="nav-item dropdown">
                 <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                   <div class="navbar-profile">

@@ -59,8 +59,8 @@
             <!--Reference box-->
             <div class="col-md-6 mb-3">
                 <label for="address" class="form-label fw-bold">Address</label>
-                <input type="text" maxlength="5" class="form-control" id="address" name="address" aria-describedby="address" required="required">
-                <div id="address" maxlength="5" class="form-text">Enter Address</div>
+                <input type="text" maxlength="50" class="form-control" id="address" name="address" aria-describedby="address" required="required">
+                <div id="address" maxlength="50" class="form-text">Enter Address</div>
             </div>
             
             <!--Email box-->

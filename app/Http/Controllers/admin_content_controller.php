@@ -241,6 +241,19 @@ class admin_content_controller extends Controller
                 }
             }
 
+
+            public function final_vendors(){
+                $vendor_data= final_vendors::all();
+        
+                return view('adminpanel.final_vendors',compact('vendor_data'));
+            }
+            public function delete_f_vendor($vendor_id){
+
+                $data=final_vendors ::where('id', $vendor_id);
+                $data->delete();
+                return redirect()->back()->with('message','vendor Deleted successfully');    
+                }
+
     
     }
 
