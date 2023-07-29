@@ -4,6 +4,13 @@
                <h2>
                   Our <span>products</span>
                </h2>
+               <div>
+                  <form action="{{url('product_search')}}" method="GET">
+                     @csrf
+                     <input type="text" name="search" placeholder="Search for Something">
+                     <input type="submit" value="search">
+                  </form>
+               </div>
             </div>
             <div class="row">
            
@@ -35,7 +42,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                     <img src="{{ asset('added_products/' . $products->image) }}" alt="">
+                     <img src="{{ asset('images/' . $products->image) }}" alt="">
 
                      </div>
                      <div class="detail-box">

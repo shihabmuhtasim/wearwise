@@ -21,7 +21,7 @@
                      <div class="widget_menu">
                         <h3>Menu</h3>
                         <ul>
-                           <li><a href="#">Home</a></li>
+                           <li><a href="{{url('/')}}">Home</a></li>
                            <li><a href="#">About</a></li>
                            <li><a href="#">Services</a></li>
                            <li><a href="#">Testimonial</a></li>
