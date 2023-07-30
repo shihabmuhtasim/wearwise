@@ -93,8 +93,10 @@ Route::middleware(['user.auth'])->group(function () {
 
     
     Route :: get('/test1',[admin_content_controller::class,'view_test1']);
-    route::post('/add_cart/{product_id,username}',[HomeController::class,'add_cart']);
+    route::post('/add_cart/{product_id}',[HomeController::class,'add_cart']);
     Route::get('/', [HomeController::class, 'index']);
+    route::get('/show_cart',[HomeController::class,'show_cart']);
+    route::get('/remove_cart/{id}',[HomeController::class,'remove_cart']);
     
     });
 
@@ -111,7 +113,9 @@ Route :: get('/userlogout', function(){
 //Nusaiba Module 2
 
 route::get('/product_details/{product_id}',[HomeController::class,'product_details']);
-
+route::get('/product_search',[HomeController::class,'product_search']);
+route::get('/product_show',[HomeController::class,'product_show']);
+Route::get('/guestuser', [HomeController::class, 'index2']);
 
 
 //module 4 vendor Shihab

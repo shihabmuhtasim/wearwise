@@ -85,7 +85,7 @@ Welcome to WearWise, an innovative e-commerce website developed as part of the C
 - [Nusaiba Alam](https://github.com/contributor1) - Module 2, User orders managing
 - [Sartaj](https://github.com/contributor2) - Module 3
 
-## License
+
 
 
 

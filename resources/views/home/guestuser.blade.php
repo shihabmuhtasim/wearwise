@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <h1>HELLO {{session('user')}}</h1>
+      
       <!-- Basic -->
       <meta charset="utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -26,13 +26,12 @@
       @include('sweetalert::alert')
       <div class="hero_area">
          <!-- header section strats -->
-         @include('home.header')
+         @include('home.header2')
          <!-- end header section -->
          <!-- slider section -->
          @include('home.slider')
          <!-- end slider section -->
       </div>
-      @include('home.product')
       <!-- why section -->
       @include('home.why')
       <!-- end why section -->
@@ -42,7 +41,7 @@
       <!-- end arrival section -->
       
       <!-- product section -->
-      
+      @include('home.product')
       <!-- end product section -->
 
       <!-- subscribe section -->
