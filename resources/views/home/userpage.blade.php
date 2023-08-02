@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <h1>HELLO {{session('user')}}</h1>
+     
       <!-- Basic -->
       <meta charset="utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />

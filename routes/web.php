@@ -97,7 +97,9 @@ Route::middleware(['user.auth'])->group(function () {
     Route::get('/', [HomeController::class, 'index']);
     route::get('/show_cart',[HomeController::class,'show_cart']);
     route::get('/remove_cart/{id}',[HomeController::class,'remove_cart']);
-    
+    route::get('/cash_order',[HomeController::class,'cash_order']);
+    route::get('/stripe/{totalprice}',[HomeController::class,'stripe']);
+    Route::post('stripe/{totalprice}',[HomeController::class,'stripePost'])->name('stripe.post');
     });
 
 

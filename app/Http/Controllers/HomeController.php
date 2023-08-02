@@ -9,13 +9,14 @@ use App\Models\Cart;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\UserSignup;
 use App\Models\Catagory;
-
+use App\Models\Order;
+use Session;
+use Stripe;
 class HomeController extends Controller
 {
     public function index()
     {   
-        $store =session('user');
-        print_r($store);
+        
         $product=products::paginate(2);
         return view('home.userpage',compact('product'));
     }
@@ -23,7 +24,7 @@ class HomeController extends Controller
     public function index2()
     {   
         
-        $product=products::paginate(2);
+        $product=products::paginate(3);
         return view('home.guestuser',compact('product'));
     }
 
@@ -54,6 +55,7 @@ class HomeController extends Controller
             $cart->username=$user->username;
 
             $cart->product_title=$product->product_title;
+            $cart->Product_id=$product->product_id;
             if($product->discount_price!=null)
             {
                 $cart->price=$product->discounted_price * $request->quantity;
@@ -102,6 +104,88 @@ class HomeController extends Controller
        
         return view('home.product_show');
     }
+
+
+    public function cash_order()
+    {
+        $store = session('user'); // Assuming $store holds the username
+        $data = cart::where('username','=', $store)->get();
+
+        foreach($data as $data)
+        {
+            $order=new order;
+            $order->name=$data->name;
+            $order->email=$data->email;
+            $order->phone=$data->phone;
+            $order->address=$data->address;
+            $order->user_id=$data->user_id;
+            $order->username=$data->username;
+            $order->product_title=$data->product_title;
+            $order->price=$data->price;
+            $order->quantity=$data->quantity;
+            $order->image=$data->image;
+            $order->product_id=$data->Product_id;
+
+            $order->payment_status='cash on delivery';
+            $order->delivery_status='processing';
+            $order->save();
+
+            $cart_id=$data->id;
+            $cart=cart::find($cart_id);
+            $cart->delete();
+
+        }
+        return redirect()->back()->with('message','We have Received your Order. We will connect with you soon.....');
+    }
+
+    public function stripe($totalprice)
+    {
+        return view('home.stripe',compact('totalprice'));
+    }
+    public function stripePost(Request $request,$totalprice)
+    {
+        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+    
+        Stripe\Charge::create ([
+                "amount" => $totalprice * 100,
+                "currency" => "usd",
+                "source" => $request->stripeToken,
+                "description" => "Test payment from itsolutionstuff.com." 
+        ]);
+
+        $store = session('user'); // Assuming $store holds the username
+        $data = cart::where('username','=', $store)->get();
+
+        foreach($data as $data)
+        {
+            $order=new order;
+            $order->name=$data->name;
+            $order->email=$data->email;
+            $order->phone=$data->phone;
+            $order->address=$data->address;
+            $order->user_id=$data->user_id;
+            $order->username=$data->username;
+            $order->product_title=$data->product_title;
+            $order->price=$data->price;
+            $order->quantity=$data->quantity;
+            $order->image=$data->image;
+            $order->product_id=$data->Product_id;
+
+            $order->payment_status='Paid';
+            $order->delivery_status='processing';
+            $order->save();
+
+            $cart_id=$data->id;
+            $cart=cart::find($cart_id);
+            $cart->delete();
+
+        }
+      
+        Session::flash('success', 'Payment successful!');
+              
+        return back();
+    }
+
 
 
 
