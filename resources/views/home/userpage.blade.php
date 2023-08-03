@@ -33,6 +33,21 @@
          <!-- end slider section -->
       </div>
       @include('home.product')
+
+      <div style="text-align: center; padding-bottom: 30px;">
+         <h1 style="font-size: 30px; text-align: center; padding-top: 20px; padding-bottom: 20px;">Comments</h1>
+         <form>
+            <textarea style="height: 150px; width: 600px;" placeholder="Comment something here"></textarea>
+            <br>
+            <a href="" class="btn btn-primary">Comment</a>
+         </form>
+
+
+      </div>
+      
+
+
+
       <!-- why section -->
       @include('home.why')
       <!-- end why section -->

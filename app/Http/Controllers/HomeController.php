@@ -12,6 +12,7 @@ use App\Models\Catagory;
 use App\Models\Order;
 use Session;
 use Stripe;
+use PDF;
 class HomeController extends Controller
 {
     public function index()
@@ -186,6 +187,29 @@ class HomeController extends Controller
         return back();
     }
 
+    public function show_order()
+    {
+        $username = session('user');
+        $order = order::where('username','=', $username)->get();
+        return view('home.order',compact('order'));
+    }
+
+    public function cancel_order($id)
+    {
+        $order=order::find($id);
+        $order->delivery_status='Your order have been canceled';
+        $order->save();
+        return redirect()->back();
+
+    }
+
+    public function print_pdf($id)
+    {
+        $order=order::find($id);
+        $pdf=PDF::loadView('home.pdf',compact('order'));
+        return $pdf->download('order_details.pdf');
+    }
+    
 
 
 
