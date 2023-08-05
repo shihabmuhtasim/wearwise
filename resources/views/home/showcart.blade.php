@@ -94,7 +94,7 @@
             <tr>
                 <td>{{$cart->product_title}}</td>
                 <td>{{$cart->quantity}}</td>
-                <td>${{$cart->price}}</td>
+                <td>{{$cart->price}}</td>
                 <td><img class="img_deg" src="{{ asset('images/' . $cart->image) }}" alt=""></td>
                 <td>
                     <a class="btn btn-danger" onclick="confirmation(event)" href="{{url('remove_cart',$cart->id)}}">Remove</a>
@@ -105,7 +105,7 @@
             @endforeach
         </table>
         <div>
-        <h1 class="total_deg">Total Price : ${{$totalprice}}</h1>
+        <h1 class="total_deg">Total Price : {{$totalprice}} -/BDT</h1>
         </div>
 
         <div class="buttons-container">

@@ -29,7 +29,7 @@
          <!-- end header section -->
 
     
-      <div class="col-sm-6 col-md-4 col-lg-4" style="margin: auto; width: 50%; padding: 30px">
+      <div class="col-sm-8 col-md-6 col-lg-6" style="margin: auto; width: 50%; padding: 30px">
                   
                      <div class="img-box" style="padding: 20px">
                      <img src="{{ asset('images/' . $product->image) }}" alt="">
@@ -46,21 +46,21 @@
                         <h6 style="color: red">
                         Discount price
                         <br>
-                           ${{$product->discounted_price}}
+                           {{$product->discounted_price}} -/BDT
                         </h6>
 
                         <h6 style="text-decoration: line-through; color: blue">
-                           Price
+                           Per day Rent
                            <br>
-                           ${{$product->price}}
+                           {{$product->price}} -/BDT
                         </h6>
 
                         @else
 
                         <h6 style="color: blue">
-                           Price
+                           Per Day Rent
                            <br>
-                           ${{$products->price}}
+                           {{$products->price}} -/BDT
                         </h6>
 
                         @endif
@@ -75,7 +75,12 @@
                               @csrf
                               <div class="row">
                                  <div class="col-md-4">
+                                 <label for="quantity">Quantity:</label>
                                     <input type="number" name="quantity" value="1" min="1" style="width: 100px">
+                                 </div>
+                                 <div class="col-md-4">
+                                 <label for="quantity">Days:</label>
+                                    <input type="number" name="quantity" value="5" min="5" style="width: 100px">
                                  </div>
                                  <div class="col-md-4">
                                     <input type="submit" value="Add to Cart">
@@ -111,5 +116,8 @@
       <script src="home/js/bootstrap.js"></script>
       <!-- custom js -->
       <script src="home/js/custom.js"></script>
+
+      
+
    </body>
 </html>

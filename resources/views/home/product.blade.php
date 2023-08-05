@@ -17,7 +17,7 @@
 
                @foreach($product as $products)
 
-               <div class="col-sm-6 col-md-4 col-lg-4">
+               <div class="col-sm-8 col-md-6 col-lg-6">
                   <div class="box">
                      <div class="option_container">
                         <div class="options">
@@ -28,7 +28,12 @@
                               @csrf
                               <div class="row">
                                  <div class="col-md-4">
+                                 <label for="quantity">Quantity:</label>
                                     <input type="number" name="quantity" value="1" min="1" style="width: 100px">
+                                 </div>
+                                 <div class="col-md-4">
+                                 <label for="quantity">Days:</label>
+                                    <input type="number" name="days" value="5" min="5" style="width: 100px">
                                  </div>
                                  <div class="col-md-4">
                                     <input type="submit" value="Add to Cart">
@@ -56,21 +61,21 @@
                         <h6 style="color: red">
                         Discount price
                         <br>
-                           ${{$products->discounted_price}}
+                           {{$products->discounted_price}} -/BDT
                         </h6>
 
                         <h6 style="text-decoration: line-through; color: blue">
-                           Price
+                           Per Day Rent
                            <br>
-                           ${{$products->price}}
+                           {{$products->price}} -/BDT
                         </h6>
 
                         @else
 
                         <h6 style="color: blue">
-                           Price
+                           Per Day Rent
                            <br>
-                           ${{$products->price}}
+                           {{$products->price}} -/BDT
                         </h6>
 
                         @endif

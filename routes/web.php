@@ -103,6 +103,9 @@ Route::middleware(['user.auth'])->group(function () {
     route::get('/show_order',[HomeController::class,'show_order']);
     route::get('/cancel_order/{id}',[HomeController::class,'cancel_order']);
     route::get('/print_pdf/{id}',[HomeController::class,'print_pdf']);
+    route::get('/profile',[HomeController::class,'profile']);
+    route::get('/profile_edit/{id}',[HomeController::class,'profile_edit']);
+    route::post('/profile_update/{id}',[HomeController::class,'profile_update']);
     });
 
 

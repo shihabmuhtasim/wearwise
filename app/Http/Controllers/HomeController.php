@@ -68,6 +68,7 @@ class HomeController extends Controller
             
             $cart->image=$product->image;
             $cart->quantity=$request->quantity;
+            $cart->day=$request->day;
 
             $cart->save();
 
@@ -124,6 +125,7 @@ class HomeController extends Controller
             $order->product_title=$data->product_title;
             $order->price=$data->price;
             $order->quantity=$data->quantity;
+            $order->day=$data->day;
             $order->image=$data->image;
             $order->product_id=$data->Product_id;
 
@@ -169,6 +171,7 @@ class HomeController extends Controller
             $order->product_title=$data->product_title;
             $order->price=$data->price;
             $order->quantity=$data->quantity;
+            $order->day=$data->day;
             $order->image=$data->image;
             $order->product_id=$data->Product_id;
 
@@ -208,6 +211,34 @@ class HomeController extends Controller
         $order=order::find($id);
         $pdf=PDF::loadView('home.pdf',compact('order'));
         return $pdf->download('order_details.pdf');
+    }
+
+    public function profile()
+    {
+        $username = session('user');
+        $user = UserSignup::where('username', $username)->first();
+
+        return view('home.profile',compact('user'));
+    }
+
+    public function profile_edit()
+    {
+        $username = session('user');
+        $user = UserSignup::where('username', $username)->first();
+        return view('home.profile_edit',compact('user'));
+    }
+
+    public function profile_update(Request $request,$id)
+    {
+        $username = session('user');
+        $user = UserSignup::where('username', $username)->first();
+        $user->username = $request->username;
+        $user->name = $request->name;
+        
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        $user->save();
+        return redirect('profile');
     }
     
 

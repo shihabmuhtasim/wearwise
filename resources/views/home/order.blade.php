@@ -56,6 +56,7 @@
         <table>
             <tr>
                 <th class="th_deg">Product Title</th>
+                <th class="th_deg">Vendor Name</th>
                 <th class="th_deg">Quantity</th>
                 <th class="th_deg">Price</th>
                 <th class="th_deg">Payment Status</th>
@@ -70,6 +71,7 @@
             @foreach($order as $order)
             <tr>
                 <td>{{$order->product_title}}</td>
+                <td>Vendor</td>
                 <td>{{$order->quantity}}</td>
                 <td>{{$order->price}}</td>
                 <td>{{$order->payment_status}}</td>
