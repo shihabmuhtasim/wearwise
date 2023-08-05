@@ -2,7 +2,7 @@
 <html>
    <head>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      <h1>HELLO {{session('user')}}</h1>
+      
       <!-- Basic -->
       <meta charset="utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -62,7 +62,15 @@
          @include('home.header')
          <!-- end header section -->
          <!-- slider section -->
-        
+         @if(session()->has('message'))
+
+            <div class="alert alert-success">
+               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+               {{session()->get('message')}}
+
+            </div>
+
+         @endif
          <!-- end slider section -->
      
       <!-- why section -->
@@ -86,7 +94,7 @@
             <tr>
                 <td>{{$cart->product_title}}</td>
                 <td>{{$cart->quantity}}</td>
-                <td>${{$cart->price}}</td>
+                <td>{{$cart->price}}</td>
                 <td><img class="img_deg" src="{{ asset('images/' . $cart->image) }}" alt=""></td>
                 <td>
                     <a class="btn btn-danger" onclick="confirmation(event)" href="{{url('remove_cart',$cart->id)}}">Remove</a>
@@ -97,12 +105,17 @@
             @endforeach
         </table>
         <div>
-        <h1 class="total_deg">Total Price : ${{$totalprice}}</h1>
+        <h1 class="total_deg">Total Price : {{$totalprice}} -/BDT</h1>
         </div>
 
         <div class="buttons-container">
             <a class="btn btn-primary" href="{{ url('/') }}">Continue Shopping</a>
-            <a class="btn btn-success" href="{{ url('/checkout') }}">Checkout</a>
+        </div>
+
+        <div>
+            <h1 style="font-size: 25px; padding-bottom: 15px;">Proceed to Order</h1>
+            <a href="{{url('cash_order')}}" class="btn btn-danger">Cash On delivery</a>
+            <a href="{{url('stripe',$totalprice)}}" class="btn btn-danger">Pay Using Card</a>
         </div>
       </div>
 

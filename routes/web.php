@@ -97,7 +97,15 @@ Route::middleware(['user.auth'])->group(function () {
     Route::get('/', [HomeController::class, 'index']);
     route::get('/show_cart',[HomeController::class,'show_cart']);
     route::get('/remove_cart/{id}',[HomeController::class,'remove_cart']);
-    
+    route::get('/cash_order',[HomeController::class,'cash_order']);
+    route::get('/stripe/{totalprice}',[HomeController::class,'stripe']);
+    Route::post('stripe/{totalprice}',[HomeController::class,'stripePost'])->name('stripe.post');
+    route::get('/show_order',[HomeController::class,'show_order']);
+    route::get('/cancel_order/{id}',[HomeController::class,'cancel_order']);
+    route::get('/print_pdf/{id}',[HomeController::class,'print_pdf']);
+    route::get('/profile',[HomeController::class,'profile']);
+    route::get('/profile_edit/{id}',[HomeController::class,'profile_edit']);
+    route::post('/profile_update/{id}',[HomeController::class,'profile_update']);
     });
 
 
