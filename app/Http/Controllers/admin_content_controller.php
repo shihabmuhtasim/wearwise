@@ -10,6 +10,7 @@ use App\Models\Customer;
 use App\Models\Order;
 use App\Models\VendorSignup;
 use App\Models\final_vendors;
+use App\Models\Temp_product;
 
 class admin_content_controller extends Controller
 {
@@ -190,15 +191,7 @@ class admin_content_controller extends Controller
             }
         }
 
-        public function view_test2(){
-            if (session()->has('vendor')) {
-          
-                return view('test2');
-            } else {
-                return redirect('vendorlogin')->with('message', 'Please login to access the admin dashboard.');
         
-            }
-        }
 
         public function show_vendors(){
             $vendor_data= VendorSignup::all();
@@ -253,6 +246,51 @@ class admin_content_controller extends Controller
                 $data->delete();
                 return redirect()->back()->with('message','vendor Deleted successfully');    
                 }
+
+
+#VENDOR WORKS
+
+public function v_view_product(){
+
+      
+    $cat= Catagory::all();
+    $app= Apparel::all();
+
+    return view('vendor.add_product',compact('cat'),compact('app'));
+    
+
+    
+}
+
+public function v_add_product(Request $request){
+    $data= new Temp_product;
+    $log = session('vendor');
+    $row = final_vendors::where('username', $log)->first();
+
+    if ($row) {
+        $vendorName = $row->buisness_name;
+    }
+
+    $data->product_title= $request['product_title'];
+    $data->product_description= $request['product_description'];
+    $data->price =$request['product_price'];
+    $data->days =$request['product_days'];
+    $data->discounted_price= $request['product_discount_price'];
+    $data->quantity= $request['product_quantity'];
+    $data->catagory_id= $request['product_category'];
+    $data->apparel_id= $request['product_apparel'];
+    $data->vendor_name= $vendorName;
+
+    $image=$request->image;
+    $imagename= time().'.'.$image->getClientOriginalExtension();
+    $request->image->move('added_products',$imagename);
+    $data->image=$imagename;
+
+    $data-> save();
+
+    return redirect()->back()->with('message','Product Added successfully');
+}
+
 
     
     }
