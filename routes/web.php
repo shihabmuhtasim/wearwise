@@ -135,10 +135,11 @@ Route :: post('/vendorlogin',[VendorSignupController::class,'vendor_login']);
 
 Route::middleware(['vendor.auth'])->group(function () {
 
-    Route :: get('/test2',[admin_content_controller::class,'view_test2']);
+    Route :: get('/vendor_dashboard',[VendorSignupController::class,'vendor_dashboard']);
 
     Route :: view('welcome','welcome');
-    
+    Route :: get('/v_view_product',[admin_content_controller::class,'v_view_product']);
+    Route :: post('/v_add_product',[admin_content_controller::class,'v_add_product']);
     });
 
     Route :: get('/vendorlogout', function(){

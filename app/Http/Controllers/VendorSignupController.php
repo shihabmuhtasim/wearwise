@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\VendorSignup;
 use App\Models\final_vendors;
+use App\Models\Temp_products;
 use Crypt;
 use Session;
 
@@ -70,7 +71,7 @@ public function get_login(){
         
                 $request->session()->put('vendor',$request['username']);
         
-                return redirect('welcome');
+                return redirect('vendor_dashboard');
             }
             else{
                 
@@ -85,6 +86,50 @@ public function get_login(){
         
         
         }
+//vendor works:
+public function vendor_dashboard(){
+    if (session()->has('vendor')) {
+  
+        return view('vendor.vendor_dashboard');
+    } else {
+        return redirect('vendorlogin')->with('message', 'Please login to access the admin dashboard.');
 
+    }
+}
+
+
+public function v_view_product(){
+
+      
+    $cat= Catagory::all();
+    $app= Apparel::all();
+
+    return view('adminpanel.add_product',compact('cat'),compact('app'));
+    
+
+    
+}
+
+public function v_add_product(Request $request){
+    $data= new products;
+    $data->product_title= $request['product_title'];
+    $data->product_description= $request['product_description'];
+    $data->price =$request['product_price'];
+    $data->days =$request['product_days'];
+    $data->discounted_price= $request['product_discount_price'];
+    $data->quantity= $request['product_quantity'];
+    $data->catagory_id= $request['product_category'];
+    $data->apparel_id= $request['product_apparel'];
+    $data->vendor_name= "Wear Wise";
+
+    $image=$request->image;
+    $imagename= time().'.'.$image->getClientOriginalExtension();
+    $request->image->move('added_products',$imagename);
+    $data->image=$imagename;
+
+    $data-> save();
+
+    return redirect()->back()->with('message','Product Added successfully');
+}
 
 }
