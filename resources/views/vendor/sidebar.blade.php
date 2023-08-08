@@ -19,7 +19,7 @@
               </div>
               <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
               <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
-                <a href="{{url('/logout')}}" class="dropdown-item preview-item">
+                <a href="{{url('/vendorlogout')}}" class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
                       <i class="mdi mdi-settings text-primary"></i>
@@ -36,7 +36,7 @@
             <span class="nav-link">Navigation</span>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{url('/admin_dashboard')}}">
+            <a class="nav-link" href="{{url('/vendor_dashboard')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -44,38 +44,31 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-icon">
-                <i class="mdi mdi-laptop"></i>
-              </span>
-              <span class="menu-title">Manage Products</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url('/view_product')}}">Add Products</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url('/show_products')}}">View Products</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">Approve vendor products</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="{{url('add_catagory')}}">
-              <span class="menu-icon">
-                <i class="mdi mdi-playlist-play"></i>
-              </span>
-              <span class="menu-title">Manage Category</span>
-            </a>
-          </li>
-          
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="{{url('add_apparel')}}">
+            <a class="nav-link" href="{{url('v_view_product')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-table-large"></i>
               </span>
-              <span class="menu-title">Manage Apparel</span>
+              <span class="menu-title">Add Products</span>
             </a>
           </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{url('/v_p_show_products')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-playlist-play"></i>
+              </span>
+              <span class="menu-title">View Pending Products</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{url('/v_show_products')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-laptop"></i>
+              </span>
+              <span class="menu-title">View Approved Products</span>
+            </a>
+          </li>
+       
+          
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{url('Customer')}}">
               <span class="menu-icon">
@@ -93,23 +86,8 @@
             </a>
           </li>
 
-          <li class="nav-item menu-items" >
-            <a class="nav-link" href="{{url('show_vendors')}}">
-              <span class="menu-icon">
-                <i class="mdi mdi-contacts"></i>
-              </span>
-              <span class="menu-title">Approve vendors</span>
-            </a>
-          </li>
 
-          <li class="nav-item menu-items" >
-            <a class="nav-link" href="{{url('final_vendors')}}">
-              <span class="menu-icon">
-                <i class="mdi mdi-contacts"></i>
-              </span>
-              <span class="menu-title">Certified vendors</span>
-            </a>
-          </li>
+
 
           <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">

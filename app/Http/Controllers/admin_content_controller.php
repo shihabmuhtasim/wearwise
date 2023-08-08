@@ -247,6 +247,51 @@ class admin_content_controller extends Controller
                 return redirect()->back()->with('message','vendor Deleted successfully');    
                 }
 
+                public function admin_show_vendor_products(){
+                    $product_data= Temp_product::all();
+            
+                    return view('adminpanel.show_vendor_products',compact('product_data'));
+                }
+
+
+
+#approve prod
+public function approve_product($product_id) {
+    // Retrieve the data from the productSignup model
+    $productData = Temp_product::where('id', $product_id)->first();
+
+    if ($productData) {
+        // Create a new instance of the Finalproducts model
+        $data = new products;
+
+        // Assign the properties from the $productData object
+        $data->product_title = $productData->product_title;
+        $data->product_description = $productData->product_description;
+        $data->price = $productData->price;
+        $data->days = $productData->days;
+        $data->discounted_price = $productData->discounted_price;
+        $data->quantity = $productData->quantity;
+        $data->catagory_id = $productData->catagory_id;
+        $data->apparel_id = $productData->apparel_id;
+        $data->vendor_name = $productData->vendor_name;
+        $data->image = $productData->image;
+
+        $data->save();
+        $productData->delete();
+
+        return redirect()->back()->with('message', 'product Approved successfully');
+    } else {
+        // Handle the case when the product data with the given ID is not found
+        return redirect()->back()->with('error', 'product data not found');
+    }
+}
+#ffff
+
+
+
+
+            
+
 
 #VENDOR WORKS
 
@@ -291,6 +336,59 @@ public function v_add_product(Request $request){
     return redirect()->back()->with('message','Product Added successfully');
 }
 
+
+public function show_vendor_products(){
+    $product_data= Temp_product::all();
+
+    return view('vendor.show_vendor_products',compact('product_data'));
+}
+
+
+public function v_delete_product($product_id){
+
+    $data=Temp_product::where('id', $product_id);
+    $data->delete();
+    return redirect()->back()->with('message','Product Deleted successfully');    
+}
+
+public function v_edit_product($product_id){
+    $data=Temp_product::where('id', $product_id)->get();
+    $cata= Catagory::all();
+    $appa= Apparel::all();
+    return view('vendor.v_edit_products',compact('data', 'cata', 'appa'));
+}
+
+public function v_update_product(Request $request, $product_id){
+    
+    $data=Temp_product::find($product_id);
+    $data->product_title= $request->product_title;
+    $data->product_description= $request->product_description;
+    $data->price =$request->product_price;
+    $data->days =$request->product_days;
+    $data->discounted_price= $request->product_discount_price;
+    $data->quantity= $request->product_quantity;
+    $data->catagory_id= $request->product_category;
+    $data->apparel_id= $request->product_apparel;
+
+    
+    $image=$request->image;
+    if ($image){
+        
+    $imagename= time().'.'.$image->getClientOriginalExtension();
+    $request->image->move('added_products',$imagename);
+    $data->image=$imagename;
+        
+    }
+    
+
+    $data->save();
+    
+
+    return redirect()->back()->with('message','Product Updated successfully'); 
+
+    
+
+    }
 
     
     }

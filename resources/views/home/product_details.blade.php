@@ -32,7 +32,7 @@
       <div class="col-sm-8 col-md-6 col-lg-6" style="margin: auto; width: 50%; padding: 30px">
                   
                      <div class="img-box" style="padding: 20px">
-                     <img src="{{ asset('images/' . $product->image) }}" alt="">
+                     <img src="{{ asset('added_products/' . $product->image) }}" alt="">
 
                      </div>
                      <div class="detail-box">
