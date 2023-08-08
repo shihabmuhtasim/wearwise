@@ -15,9 +15,7 @@
                         <p class="mb-0 font-weight-normal d-none d-sm-block">Get started managing your buisness</p>
                       </div>
                       <div class="col-3 col-sm-2 col-xl-2 pl-0 text-center">
-                        <span>
-                          <a href=" " target="_blank" class="btn btn-outline-light btn-rounded get-started-btn">Launch Product</a>
-                        </span>
+
                       </div>
                     </div>
                   </div>

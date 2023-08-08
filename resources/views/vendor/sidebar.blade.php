@@ -1,7 +1,7 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="{{url('/admin_dashboard')}}"><img src="admin/assets/images/logo.jpg" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo" href="{{url('/vendor_dashboard')}}"><img src="admin/assets/images/logo.jpg" alt="logo" /></a>
 
         </div>
         <ul class="nav">
@@ -69,13 +69,6 @@
           </li>
        
           
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="{{url('Customer')}}">
-              <span class="menu-icon">
-                <i class="mdi mdi-chart-bar"></i>
-              </span>
-              <span class="menu-title">View Customers</span>
-            </a>
 
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{url('order')}}">
@@ -94,14 +87,14 @@
               <span class="menu-icon">
                 <i class="mdi mdi-security"></i>
               </span>
-              <span class="menu-title">Admin's Profile</span>
+              <span class="menu-title">Vendor's Profile</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url('/logout')}}"> Logout </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url('/adminlogin')}}"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{url('/adminsignup')}}"> Register new account </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('/vendorlogout')}}"> Logout </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('/vendorlogin')}}"> Login </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('/vendorsignup')}}"> Register new account </a></li>
               </ul>
             </div>
           </li>
