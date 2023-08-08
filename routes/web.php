@@ -62,7 +62,7 @@ Route::middleware(['admin.auth'])->group(function () {
     Route :: post('/add_product',[admin_content_controller::class,'add_product']);
     
     Route :: get('/show_products',[admin_content_controller::class,'show_products']);
-    Route :: get('/delete_product/{product_id}',[admin_content_controller::class,'delete_product']);
+    //Route :: get('/delete_product/{product_id}',[admin_content_controller::class,'delete_product']);
     Route :: get('/edit_product/{product_id}',[admin_content_controller::class,'edit_product']);
     Route :: post('/update_product/{product_id}',[admin_content_controller::class,'update_product']);
     
@@ -81,7 +81,8 @@ Route::middleware(['admin.auth'])->group(function () {
 
 });
 
-
+//vendor admin common delete 
+Route :: get('/delete_product/{product_id}',[admin_content_controller::class,'delete_product']);
 //Shihab module 2 logins
 Route :: get('/usersignup',[UserSignupController::class,'index']);
 Route :: post('/usersignup',[UserSignupController::class,'user_data_store']);
@@ -148,6 +149,8 @@ Route::middleware(['vendor.auth'])->group(function () {
     Route :: get('/v_delete_product/{product_id}',[admin_content_controller::class,'v_delete_product']);
     Route :: get('/v_edit_product/{product_id}',[admin_content_controller::class,'v_edit_product']);
     Route :: post('/v_update_product/{product_id}',[admin_content_controller::class,'v_update_product']);
+
+    Route :: get('/v_show_products',[admin_content_controller::class,'show_approved_vendor_products']);
 
     
     });

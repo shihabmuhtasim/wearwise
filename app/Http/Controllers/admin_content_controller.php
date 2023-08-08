@@ -389,7 +389,22 @@ public function v_update_product(Request $request, $product_id){
     
 
     }
+   
+    public function show_approved_vendor_products(){
+        $log = session('vendor');
+    $row = final_vendors::where('username', $log)->first();
 
+    if ($row) {
+        $vendorName = $row->buisness_name;
+    }
+
+
+
+    $product_data= products:: where('vendor_name', $vendorName)->get();
+    //dd($product_data);
+    //return view('vendor.test',compact('product_data'));
+       return view('vendor.show_approved_vendor_products',compact('product_data'));
+    }
     
     }
 
