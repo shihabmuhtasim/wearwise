@@ -71,6 +71,10 @@ Route::middleware(['admin.auth'])->group(function () {
     Route :: get('/approve_vendor/{id}',[admin_content_controller::class,'approve_vendor']);
     Route :: get('/final_vendors',[admin_content_controller::class,'final_vendors']);
     Route :: get('/delete_f_vendor/{id}',[admin_content_controller::class,'delete_f_vendor']);
+    Route :: get('/a_v_show_products',[admin_content_controller::class,'admin_show_vendor_products']);
+    Route :: get('/a_v_delete_product/{product_id}',[admin_content_controller::class,'v_delete_product']);
+    Route :: get('/approve_product/{id}',[admin_content_controller::class,'approve_product']);
+    
     //Sartaj
     Route :: get('/order',[admin_content_controller::class,'order']);
     Route :: get('/Customer',[admin_content_controller::class,'Customer']);
@@ -140,6 +144,12 @@ Route::middleware(['vendor.auth'])->group(function () {
     Route :: view('welcome','welcome');
     Route :: get('/v_view_product',[admin_content_controller::class,'v_view_product']);
     Route :: post('/v_add_product',[admin_content_controller::class,'v_add_product']);
+    Route :: get('/v_p_show_products',[admin_content_controller::class,'show_vendor_products']);
+    Route :: get('/v_delete_product/{product_id}',[admin_content_controller::class,'v_delete_product']);
+    Route :: get('/v_edit_product/{product_id}',[admin_content_controller::class,'v_edit_product']);
+    Route :: post('/v_update_product/{product_id}',[admin_content_controller::class,'v_update_product']);
+
+    
     });
 
     Route :: get('/vendorlogout', function(){
