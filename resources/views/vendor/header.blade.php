@@ -17,7 +17,7 @@
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
                   <h6 class="p-3 mb-0">Projects</h6>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item" href="{{url('/add_product')}}">
+                  <a class="dropdown-item preview-item" href="{{url('/v_add_product')}}">
                     <div class="preview-thumbnail">
                       <div class="preview-icon bg-dark rounded-circle">
                         <i class="mdi mdi-file-outline text-primary"></i>
@@ -28,25 +28,25 @@
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item" href="{{url('/add_apparel')}}">
+                  <a class="dropdown-item preview-item" href="{{url('/v_show_products')}}">
                     <div class="preview-thumbnail">
                       <div class="preview-icon bg-dark rounded-circle">
                         <i class="mdi mdi-web text-info"></i>
                       </div>
                     </div>
                     <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">Add Apparel</p>
+                      <p class="preview-subject ellipsis mb-1">Delete Approved products</p>
                     </div>
                   </a>
                   <div class="dropdown-divider" ></div>
-                  <a class="dropdown-item preview-item" href="{{url('/add_catagory')}}">
+                  <a class="dropdown-item preview-item" href="{{url('/v_p_show_products')}}">
                     <div class="preview-thumbnail">
                       <div class="preview-icon bg-dark rounded-circle">
                         <i class="mdi mdi-layers text-danger"></i>
                       </div>
                     </div>
                     <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">Add catagory</p>
+                      <p class="preview-subject ellipsis mb-1">Edit Pending Posts</p>
                     </div>
                   </a>
               </li>
@@ -82,26 +82,26 @@
         <p class="text-muted ellipsis mb-0"> New user? Sign up here </p>
       </div>
     </a>
-    <a class="dropdown-item preview-item" href="{{url('/vendorlogin')}}">
+    <a class="dropdown-item preview-item" href="{{url('/adminlogin')}}">
       <div class="preview-thumbnail">
         <div class="preview-icon bg-dark rounded-circle">
           <i class="mdi mdi-login-variant text-warning"></i>
         </div>
       </div>
       <div class="preview-item-content">
-        <p class="preview-subject mb-1">Vendor Login</p>
-        <p class="text-muted ellipsis mb-0"> Click here to log in as a vendor </p>
+        <p class="preview-subject mb-1">Admin Login</p>
+        <p class="text-muted ellipsis mb-0"> Click here to log in as a admin </p>
       </div>
     </a>
-    <a class="dropdown-item preview-item" href="{{url('/vendorsignup')}}">
+    <a class="dropdown-item preview-item" href="{{url('/adminsignup')}}">
       <div class="preview-thumbnail">
         <div class="preview-icon bg-dark rounded-circle">
           <i class="mdi mdi-account-plus text-danger"></i>
         </div>
       </div>
       <div class="preview-item-content" >
-        <p class="preview-subject mb-1">Vendor Sign Up</p>
-        <p class="text-muted ellipsis mb-0"> New vendor? Sign up here </p>
+        <p class="preview-subject mb-1">Admin Sign Up</p>
+        <p class="text-muted ellipsis mb-0"> New admin? Sign up here </p>
       </div>
     </a>
 </li>
@@ -109,14 +109,14 @@
                 <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                   <div class="navbar-profile">
                     <img class="img-xs rounded-circle" src="admin/assets/images/faces/face15.jpg" alt="">
-                    <p class="mb-0 d-none d-sm-block navbar-profile-name">{{session('admin')}}</p>
+                    <p class="mb-0 d-none d-sm-block navbar-profile-name">{{session('vendor')}}</p>
                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                   </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
                   <h6 class="p-3 mb-0">Options</h6>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item" href="{{url('/adminsignup')}}" >
+                  <a class="dropdown-item preview-item" href="{{url('/vendorsignup')}}" >
                     <div class="preview-thumbnail">
                       <div class="preview-icon bg-dark rounded-circle">
                         <i class="mdi mdi-settings text-success"></i>
@@ -127,7 +127,7 @@
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item" href="{{url('/logout')}}">
+                  <a class="dropdown-item preview-item" href="{{url('/vendorlogout')}}">
                     <div class="preview-thumbnail">
                       <div class="preview-icon bg-dark rounded-circle">
                         <i class="mdi mdi-logout text-danger"></i>
