@@ -47,7 +47,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                     <img src="{{ asset('images/' . $products->image) }}" alt="">
+                     <img src="{{ asset('added_products/' . $products->image) }}" alt="">
 
                      </div>
                      <div class="detail-box">

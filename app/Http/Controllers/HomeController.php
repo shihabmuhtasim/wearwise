@@ -56,6 +56,7 @@ class HomeController extends Controller
             $cart->username=$user->username;
 
             $cart->product_title=$product->product_title;
+            $cart->vendor_name=$product->vendor_name;
             $cart->Product_id=$product->product_id;
             if($product->discount_price!=null)
             {
@@ -113,6 +114,7 @@ class HomeController extends Controller
     {
         $store = session('user'); // Assuming $store holds the username
         $data = cart::where('username','=', $store)->get();
+        
 
         foreach($data as $data)
         {
@@ -129,6 +131,8 @@ class HomeController extends Controller
             $order->day=$data->day;
             $order->image=$data->image;
             $order->product_id=$data->Product_id;
+            $order->vendor_name=$data->vendor_name;
+            
 
             $order->payment_status='cash on delivery';
             $order->delivery_status='processing';
@@ -175,6 +179,7 @@ class HomeController extends Controller
             $order->day=$data->day;
             $order->image=$data->image;
             $order->product_id=$data->Product_id;
+            $order->vendor_name=$data->vendor_name;
 
             $order->payment_status='Paid';
             $order->delivery_status='processing';
