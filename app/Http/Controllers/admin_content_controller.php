@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Catagory;
 use App\Models\Apparel;
 use App\Models\products;
-use App\Models\Customer;
+use App\Models\UserSignup;
 use App\Models\Order;
 use App\Models\VendorSignup;
 use App\Models\final_vendors;
@@ -16,13 +16,14 @@ class admin_content_controller extends Controller
 {
 
     public function index(){
-            if (session()->has('admin')) {
+        $order_data= Order::all();
+        $product_data=products::all();
+        $cus_data=UserSignup::all();
+        $w_order= Order:: where('vendor_name', 'Wear wise')->get();
+        //print_r($user_data);
           
-                return view('adminpanel.admin_dashboard');
-            } else {
-                return redirect('adminlogin')->with('message', 'Please login to access the admin dashboard.');
-        
-            }
+        return view('adminpanel.admin_dashboard',compact('order_data', 'product_data', 'cus_data','w_order'));
+            
         }
 
     
@@ -166,10 +167,17 @@ class admin_content_controller extends Controller
         
         public function order()
         {
-            $orders = Order::all();
+            $product_data = Order::all();
         
-            return view('adminpanel.order', ['orders' => $orders]);
+            return view('adminpanel.order', compact('product_data'));
         }
+        public function delete_orders($product_id){
+
+            $data=Order::where('id', $product_id);
+            $data->delete();
+            return redirect()->back()->with('message','Order Deleted successfully');    
+        }
+        
         
 
         public function Customer()

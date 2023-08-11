@@ -30,39 +30,63 @@
                 </div>
                 @endif
 
-                <h1 class="text-center text-white">Order List</h1>
-                <div class="table-responsive">
-                    <table class="table table-bordered mt-5">
-                        <thead class="bg-secondary text-light text-center">
-                            <tr class="text-center">
-                                <th>ID</th>
-                                <th>Product</th>
-                                <th>Image</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Customer</th>
-                                <th>Ordered Date</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody style="background-color: #eaf4f4; color: #333;">
-    
-    @foreach($orders as $order)
+                <!-- TABLE-->
+                <h1 class="text-center text-white">Wear Wise Products</h1>
+    <div class="table-responsive">
+  <table class="table table-bordered mt-5">
+  <thead class="bg-secondary text-light text-center">
     <tr class="text-center">
-        <td>{{ $order->id }}</td>
-        <td>{{ $order->product }}</td>
-        <td><img src="{{ $order->image }}" alt="{{ $order->product }}" class="product-image"></td>
-        <td>${{ $order->price }}</td>
-        <td>{{ $order->quantity }}</td>
-        <td>{{ $order->customer }}</td>
-        <td>{{ $order->ordered_date }}</td>
-        <td>{{ $order->status }}</td>
-        <td>
-            <!-- Action buttons for order -->
-            <!-- Add your action buttons here -->
-        </td>
+
+
+        <th>Order ID</th>
+        <th>Customer Name</th>
+
+        <th>phone</th>
+        
+        <th>address</th>
+        <th>Product Name</th>
+        <th>Image</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Start date</th>
+        <th>End date</th>
+        <th>Vendor</th>
+        <th>Delete</th>
     </tr>
+
+    <tbody style="background-color: #eaf4f4; color: #333;">
+    
+     @foreach($product_data as $product_data)
+    <tr class='text-center'>
+        
+            <td>{{$product_data->id}}</td>
+            <td>{{$product_data->name}}</td>
+            <td>{{$product_data->phone}}</td>
+            <td>{{$product_data->address}}</td>
+            <td>{{$product_data->product_title}}</td>
+            <td>
+            <img src="/added_products/{{$product_data->image}}" class="product-image">
+
+
+
+            </td>
+            <td>{{$product_data->price}}</td>
+            <td>{{$product_data->quantity}}</td>
+            <td>{{ $product_data->created_at->format('Y-m-d') }}</td>
+@php
+    $daysToAdd = $product_data->day; // Change this to the number of days you want to add
+    $newDate = $product_data->created_at->addDays($daysToAdd);
+@endphp
+
+<td>{{ $newDate->format('Y-m-d') }}</td>
+
+
+            <td>{{$product_data->vendor_name}}</td>
+
+	            
+
+            <td><a onclick="return confirm('Confirm Delete?')" class="btn btn-danger" href="{{url('delete_orders',$product_data->id)}}">Delete</a></td>
+        </tr>
     @endforeach
 </tbody>
 

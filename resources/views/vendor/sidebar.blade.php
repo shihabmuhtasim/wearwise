@@ -71,7 +71,7 @@
           
 
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{url('order')}}">
+            <a class="nav-link" href="{{url('v_orders')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-chart-bar"></i>
               </span>
