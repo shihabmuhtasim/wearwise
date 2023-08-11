@@ -151,7 +151,8 @@ Route::middleware(['vendor.auth'])->group(function () {
     Route :: post('/v_update_product/{product_id}',[admin_content_controller::class,'v_update_product']);
 
     Route :: get('/v_show_products',[admin_content_controller::class,'show_approved_vendor_products']);
-
+    Route :: get('/v_orders',[admin_content_controller::class,'v_orders']);
+    Route :: get('/delete_v_orders/{product_id}',[admin_content_controller::class,'delete_v_orders']);
     
     });
 

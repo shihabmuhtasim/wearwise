@@ -405,6 +405,26 @@ public function v_update_product(Request $request, $product_id){
     //return view('vendor.test',compact('product_data'));
        return view('vendor.show_approved_vendor_products',compact('product_data'));
     }
+
+
+    public function v_orders(){
+        $log = session('vendor');
+    $row = final_vendors::where('username', $log)->first();
+
+    if ($row) {
+        $vendorName = $row->buisness_name;
+    }
+    $product_data= Order:: where('vendor_name', $vendorName)->get();
+    
+        return view('vendor.v_orders',compact('product_data'));
+    }
+
+    public function delete_v_orders($product_id){
+
+        $data=Order::where('id', $product_id);
+        $data->delete();
+        return redirect()->back()->with('message','Order Deleted successfully');    
+    }
     
     }
 
