@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Models\VendorSignup;
 use App\Models\final_vendors;
-use App\Models\Temp_products;
+use App\Models\Temp_product;
+use App\Models\products;
+use App\Models\UserSignup;
+use App\Models\Order;
 use Crypt;
 use Session;
 
@@ -88,13 +91,20 @@ public function get_login(){
         }
 //vendor works:
 public function vendor_dashboard(){
-    if (session()->has('vendor')) {
-  
-        return view('vendor.vendor_dashboard');
-    } else {
-        return redirect('vendorlogin')->with('message', 'Please login to access the admin dashboard.');
+    
 
+    $log = session('vendor');
+    $row = final_vendors::where('username', $log)->first();
+
+    if ($row) {
+        $vendorName = $row->buisness_name;
     }
+    $product_data= products:: where('vendor_name', $vendorName)->get();
+    $order_data= Order:: where('vendor_name', $vendorName)->get();
+    $prodCount=Temp_product:: where('vendor_name', $vendorName)->get();
+      
+    return view('vendor.vendor_dashboard',compact('order_data', 'product_data','prodCount'));
+    
 }
 
 

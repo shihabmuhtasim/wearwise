@@ -75,8 +75,10 @@ Route::middleware(['admin.auth'])->group(function () {
     Route :: get('/a_v_delete_product/{product_id}',[admin_content_controller::class,'v_delete_product']);
     Route :: get('/approve_product/{id}',[admin_content_controller::class,'approve_product']);
     
-    //Sartaj
+    
     Route :: get('/order',[admin_content_controller::class,'order']);
+    Route :: get('/delete_orders/{product_id}',[admin_content_controller::class,'delete_orders']);
+    //Sartaj
     Route :: get('/Customer',[admin_content_controller::class,'Customer']);
 
 });
@@ -111,6 +113,7 @@ Route::middleware(['user.auth'])->group(function () {
     route::get('/profile',[HomeController::class,'profile']);
     route::get('/profile_edit/{id}',[HomeController::class,'profile_edit']);
     route::post('/profile_update/{id}',[HomeController::class,'profile_update']);
+    
     });
 
 
