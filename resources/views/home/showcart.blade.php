@@ -95,7 +95,7 @@
                 <td>{{$cart->product_title}}</td>
                 <td>{{$cart->quantity}}</td>
                 <td>{{$cart->price}}</td>
-                <td><img class="img_deg" src="{{ asset('images/' . $cart->image) }}" alt=""></td>
+                <td><img class="img_deg" src="{{ asset('added_products/' . $cart->image) }}" alt=""></td>
                 <td>
                     <a class="btn btn-danger" onclick="confirmation(event)" href="{{url('remove_cart',$cart->id)}}">Remove</a>
                 </td>

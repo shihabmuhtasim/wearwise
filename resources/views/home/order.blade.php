@@ -71,13 +71,13 @@
             @foreach($order as $order)
             <tr>
                 <td>{{$order->product_title}}</td>
-                <td>Vendor</td>
+                <td>{{$order->vendor_name}}</td>
                 <td>{{$order->quantity}}</td>
                 <td>{{$order->price}}</td>
                 <td>{{$order->payment_status}}</td>
                 <td>{{$order->delivery_status}}</td>
                 <td>
-                <img height="100" width="120" src="{{ asset('images/' . $order->image) }}" alt="Product Image">
+                <img height="100" width="120" src="{{ asset('added_products/' . $order->image) }}" alt="Product Image">
 
                 </td>
                 <td>

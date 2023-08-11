@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('quantity')->nullable();
             $table->string('image')->nullable();
             $table->string('product_id')->nullable();
+            $table->string('vendor_name')->nullable();
             
             $table->string('payment_status')->nullable();
             $table->string('delivery_status')->nullable();

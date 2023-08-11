@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('product_title')->nullable();
             $table->string('price')->nullable();
             $table->string('day')->nullable();
+            $table->string('vendor_name')->nullable();
             
             
             $table->string('quantity')->nullable();
