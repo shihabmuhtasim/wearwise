@@ -79,6 +79,7 @@
             <tr>
                 <th class="th_deg">Product Title</th>
                 <th class="th_deg">Product quantity</th>
+                <th class="th_deg">Day</th>
                 <th class="th_deg">Price</th>
                 <th class="th_deg">Image</th>
                 <th class="th_deg">Action</th>
@@ -94,6 +95,7 @@
             <tr>
                 <td>{{$cart->product_title}}</td>
                 <td>{{$cart->quantity}}</td>
+                <td>{{$cart->day}}</td>
                 <td>{{$cart->price}}</td>
                 <td><img class="img_deg" src="{{ asset('added_products/' . $cart->image) }}" alt=""></td>
                 <td>
