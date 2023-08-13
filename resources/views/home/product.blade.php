@@ -24,6 +24,9 @@
                            <a href="{{url('product_details',$products->product_id)}}" class="option1">
                            Product Details
                            </a>
+                           <a class="option2">
+                           {{$products->vendor_name}}
+                           </a>
                            <form action="{{url('add_cart',$products->product_id)}}" method="Post">
                               @csrf
                               <div class="row">
@@ -33,7 +36,7 @@
                                  </div>
                                  <div class="col-md-4">
                                  <label for="quantity">Days:</label>
-                                    <input type="number" name="days" value="5" min="5" style="width: 100px">
+                                    <input type="number" name="days" value="{{ $products->days }}" min="{{ $products->days }}" style="width: 100px">
                                  </div>
                                  <div class="col-md-4">
                                     <input type="submit" value="Add to Cart">

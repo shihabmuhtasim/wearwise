@@ -67,9 +67,10 @@
 
                         <h6>Product Details : {{$product->product_description}}</h6>
                         <h6>Available Quantity : {{$product->quantity}}</h6>
+                        <h6>Vendor : {{$product->vendor_name}}</h6>
 
 
-                        <h8>{{ session('user') }}</h8>
+                        
 
                         <form action="{{url('add_cart',$product->product_id )}}" method="Post">
                               @csrf

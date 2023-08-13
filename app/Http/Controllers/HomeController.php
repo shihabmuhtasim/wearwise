@@ -58,18 +58,19 @@ class HomeController extends Controller
             $cart->product_title=$product->product_title;
             $cart->vendor_name=$product->vendor_name;
             $cart->Product_id=$product->product_id;
-            if($product->discount_price!=null)
+            $cart->image=$product->image;
+            $cart->quantity=$request->quantity;
+            $cart->day=$request->days;
+            if($product->discounted_price!=null)
             {
-                $cart->price=$product->discounted_price * $request->quantity;
+                $cart->price=$product->discounted_price * $request->quantity * $request->days;
             }
             else
             {
-                $cart->price=$product->price * $request->quantity;
+                $cart->price=$product->price * $request->quantity * $request->days;
             }
             
-            $cart->image=$product->image;
-            $cart->quantity=$request->quantity;
-            $cart->day=$request->day;
+            
 
             $cart->save();
 
