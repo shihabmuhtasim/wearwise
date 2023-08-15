@@ -41,18 +41,19 @@
                                 <th>Phone</th>
                                 <th>Address</th>
                                 <th>Registered Date</th>
-                                <th>Action</th>
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody style="background-color: #eaf4f4; color: #333;">
-                            @foreach($customers as $customer)
+                            @foreach($cus_data as $cus_data)
                             <tr class="text-center">
-                                <td>{{ $customer->id }}</td>
-                                <td>{{ $customer->name }}</td>
-                                <td>{{ $customer->email }}</td>
-                                <td>{{ $customer->phone }}</td>
-                                <td>{{ $customer->address }}</td>
-                                <td>{{ $customer->registered_date }}</td>
+                                <td>{{ $cus_data->id }}</td>
+                                <td>{{ $cus_data->name }}</td>
+                                <td>{{ $cus_data->email }}</td>
+                                <td>{{ $cus_data->phone }}</td>
+                                <td>{{ $cus_data->address }}</td>
+                                <td>{{ $cus_data->created_at }}</td>
+                                <td><a onclick="return confirm('Confirm Delete?')" class="btn btn-danger" href="{{url('delete_Customer',$cus_data->id)}}">Delete</a></td>
                                 <td>
             
             

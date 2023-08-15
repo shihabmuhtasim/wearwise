@@ -13,6 +13,8 @@ use App\Models\Order;
 use Session;
 use Stripe;
 use PDF;
+use App\Models\Comment;
+use App\Models\Reply;
 class HomeController extends Controller
 {
     public function index()
@@ -33,8 +35,10 @@ class HomeController extends Controller
     public function product_details($product_id)
     {
         $product=products::find($product_id);
+        $comment=comment::orderby('id','desc')->get();
+        $reply=reply::all();
 
-        return view('home.product_details',compact('product'));
+        return view('home.product_details',compact('product','comment','reply'));
     }
 
 
@@ -247,6 +251,53 @@ class HomeController extends Controller
         $user->save();
         return redirect('profile');
     }
+    public function add_comment(Request $request,$product_id)
+    {
+       $store =session('user');
+    //    $product=products::where('id','=', $product_id)->get();
+       
+
+       if($store!=null)
+       {
+         $comment=new comment;
+        //  $comment->product_id=$product;
+         $comment->product_id = $product_id;
+         $comment->name=$store;
+         $comment->comment=$request->comment;
+         $comment->save();
+         return redirect()->back();
+
+
+   
+       }
+       else
+       {
+        return redirect('userlogin');
+       }
+    }
+    public function add_reply(Request $request)
+    {
+       $store =session('user');
+       
+
+       if($store!=null)
+       {
+         $reply=new reply;
+         $reply->name=$store;
+         $reply->comment_id=$request->commentId;
+         $reply->reply=$request->reply;
+         $reply->save();
+         return redirect()->back();
+
+
+   
+       }
+       else
+       {
+        return redirect('userlogin');
+       }
+    }
+
     
 
 
