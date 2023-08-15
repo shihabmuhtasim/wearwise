@@ -144,7 +144,7 @@ class HomeController extends Controller
             $cart->delete();
 
         }
-        return redirect()->back()->with('message','We have Received your Order. We will connect with you soon.....');
+        return redirect('/')->with('message','We have Received your Order. We will connect with you soon.....');
     }
 
     public function stripe($totalprice)
