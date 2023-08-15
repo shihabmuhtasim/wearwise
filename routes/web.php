@@ -80,6 +80,7 @@ Route::middleware(['admin.auth'])->group(function () {
     Route :: get('/delete_orders/{product_id}',[admin_content_controller::class,'delete_orders']);
     //Sartaj
     Route :: get('/Customer',[admin_content_controller::class,'Customer']);
+    Route :: get('/delete_Customer/{cus_id}',[admin_content_controller::class,'delete_Customer']);
 
 });
 
@@ -167,3 +168,6 @@ Route::middleware(['vendor.auth'])->group(function () {
     
     });
 
+Route::post('/product/{product_id}/add_comment', [HomeController::class, 'add_comment']);
+
+Route::post('/add_reply',[HomeController::class,'add_reply']);
