@@ -44,12 +44,13 @@ class HomeController extends Controller
 
     public function add_cart(Request $request,$product_id)
     { 
-           
+    
         $store = session('user'); // Assuming $store holds the username
         $user = UserSignup::where('username', $store)->first();
         $product = products::where('product_id', $product_id)->first();
+        $check=$request->days;
         
-
+        $days = $product->days;
             
             $cart=new cart;
             $cart->name=$user->name;
@@ -64,7 +65,14 @@ class HomeController extends Controller
             $cart->Product_id=$product->product_id;
             $cart->image=$product->image;
             $cart->quantity=$request->quantity;
-            $cart->day=$request->days;
+            if ($check>=$days){
+                $cart->day=$check;
+            }
+            else{
+                return view('home.showcart');
+
+            }
+            
             if($product->discounted_price!=null)
             {
                 $cart->price=$product->discounted_price * $request->quantity * $request->days;
