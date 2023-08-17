@@ -20,7 +20,6 @@ class admin_content_controller extends Controller
         $product_data=products::all();
         $cus_data=UserSignup::all();
         $w_order= Order:: where('vendor_name', 'Wear wise')->get();
-        //print_r($user_data);
           
         return view('adminpanel.admin_dashboard',compact('order_data', 'product_data', 'cus_data','w_order'));
             
@@ -182,7 +181,7 @@ class admin_content_controller extends Controller
 
         public function Customer()
         {
-            $customers = Customer::all();
+            $customers = UserSignup::all();
         
             return view('adminpanel.Customer', ['customers' => $customers]);
         }
@@ -249,10 +248,18 @@ class admin_content_controller extends Controller
                 return view('adminpanel.final_vendors',compact('vendor_data'));
             }
             public function delete_f_vendor($vendor_id){
-
+                $vendor = final_vendors::find($vendor_id);
+                $matchingProducts = products::where('vendor_name', $vendor->buisness_name)->get();
+                if ($matchingProducts->isNotEmpty()) {
+                    foreach ($matchingProducts as $product) {
+                        $product->delete();
+                    }
+                }
+                
                 $data=final_vendors ::where('id', $vendor_id);
+        
                 $data->delete();
-                return redirect()->back()->with('message','vendor Deleted successfully');    
+                return redirect()->back()->with('message','Vendor and the vendor products deleted');    
                 }
 
                 public function admin_show_vendor_products(){
