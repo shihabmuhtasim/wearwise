@@ -62,6 +62,8 @@
                 <th class="th_deg">Price</th>
                 <th class="th_deg">Payment Status</th>
                 <th class="th_deg">Delivery Status</th>
+                <th class="th_deg">Date of order</th>
+                <th class="th_deg">Return Date</th>
                 <th class="th_deg">Image</th>
                 <th class="th_deg">Cancel Order</th>
                 <th class="th_deg">Print</th>
@@ -78,6 +80,13 @@
                 <td>{{$order->price}}</td>
                 <td>{{$order->payment_status}}</td>
                 <td>{{$order->delivery_status}}</td>
+                <td>{{$order->created_at->format('Y-m-d') }}</td>
+@php
+    $daysToAdd = $order->day; // Change this to the number of days you want to add
+    $newDate = $order->created_at->addDays($daysToAdd);
+@endphp
+
+<td>{{ $newDate->format('Y-m-d') }}</td>
                 <td>
                 <img height="100" width="120" src="{{ asset('added_products/' . $order->image) }}" alt="Product Image">
 

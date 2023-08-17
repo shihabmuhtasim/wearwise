@@ -181,11 +181,18 @@ class admin_content_controller extends Controller
 
         public function Customer()
         {
-            $customers = UserSignup::all();
+
+            $cus_data=UserSignup::all();
+
         
-            return view('adminpanel.Customer', ['customers' => $customers]);
+            return view('adminpanel.Customer',compact('cus_data'));
         }
-     
+        public function delete_Customer($cus_id){
+
+            $data=UserSignup::where('id', $cus_id);
+            $data->delete();
+            return redirect()->back()->with('message','Customer Deleted successfully');    
+            }
 
 //test
         public function view_test1(){

@@ -21,6 +21,7 @@
       <link href="home/css/style.css" rel="stylesheet" />
       <!-- responsive style -->
       <link href="home/css/responsive.css" rel="stylesheet" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    </head>
    <body>
       <div class="hero_area">
@@ -98,6 +99,60 @@
                      </div>
                   </div>
                </div>
+               <div style="text-align: center; padding-bottom: 30px;">
+                  <h1 style="font-size: 30px; text-align: center; padding-top: 20px; padding-bottom: 20px;">Comments</h1>
+                  <form action="{{ url('/product/' . $product->product_id  . '/add_comment') }}" method="POST">
+
+         
+                     @csrf
+                     <textarea style="height: 150px; width: 600px;" placeholder="Comment something here" name="comment"></textarea>
+                     <br>
+                     <input type="submit" class="btn btn-primary" value=" Comment">
+                      
+                  </form>
+         
+         
+               </div>
+               <div style="padding-left: 20%;">
+                  <h1 style="font-size: 20px; padding-bottom: 20px;">All Comments</h1>
+                  @foreach($comment as $comment)
+                      @if ($comment->product_id == $product->product_id )
+
+                  <div>
+                  
+                  
+                  <b>{{$comment->name}}</b>
+                  <p>{{$comment->comment}}</p>
+                  <a style="color: blue" href="javascript::void(0);" onclick="reply(this)" data-Commentid="{{$comment->id}}">Reply</a>
+                  @foreach($reply as $rep)
+                  @if($rep->comment_id==$comment->id)
+                  <div style="padding-left: 3%; padding-bottom: 10px; padding-bottom: 10px;">
+                     <b>{{$rep->name}}</b>
+                     <p>{{$rep->reply}}</p>
+                     <a style="color: red"  href="javascript::void(0);" onclick="reply(this)" data-Commentid="{{$comment->id}}">Reply</a>
+         
+                  </div>
+                  @endif
+                  @endforeach
+         
+                  </div>
+                  @endif
+         
+                  @endforeach
+         
+                  <!-- reply text -->
+                  <div style="display: none;" class="replyDiv">
+                     <form action="{{url('add_reply')}}" method="POST">
+                        @csrf
+                     <input type="text" id="commentId"  name="commentId" hidden="">
+                     <textarea style="height: 100px; width: 500px;" name="reply" placeholder="write something here"></textarea>
+                     <br>
+                     <input type="submit" class="btn btn-primary" value="reply">
+                     <a href="javascript::void(0);" class="btn" onClick="reply_close(this)">Close</a>
+                     </form>
+                  </div>
+               </div>
+               
       
       <!-- footer start -->
       @include('home.footer')
@@ -110,6 +165,17 @@
          </p>
       </div>
       <!-- jQery -->
+      <script type="text/javascript"> 
+         function reply(caller) {
+           document.getElementById('commentId').value=$(caller).attr('data-Commentid');
+            $('.replyDiv').insertAfter ($(caller));
+            $('.replyDiv').show();
+          }
+         function reply_close(caller) {
+            
+            $('.replyDiv').hide();
+          }
+     </script>
       <script src="home/js/jquery-3.4.1.min.js"></script>
       <!-- popper js -->
       <script src="home/js/popper.min.js"></script>
