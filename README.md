@@ -5,7 +5,7 @@
 
 ## Introduction
 
-Welcome to WearWise, an innovative e-commerce website developed as part of the CSE471 course project for Section 07, Group 03. WearWise offers a convenient platform for users to buy and sell a wide range of trendy apparel items. This README provides an overview of the website's features and modules.
+Welcome to WearWise, an innovative e-commerce website developed as part of the CSE471 course project for Section 07, Group 03. WearWise offers a convenient platform for users to rent out a wide range of trendy apparel items. This README provides an overview of the website's features and modules.
 
 ## Project Details
 
@@ -81,9 +81,9 @@ Welcome to WearWise, an innovative e-commerce website developed as part of the C
 
 ## Contributors
 
-- [Shihab Muhtasim](https://github.com/shihabmuhtasim) - Module 1, module 4, Login & session handelling
-- [Nusaiba Alam](https://github.com/contributor1) - Module 2, User orders managing
-- [Sartaj](https://github.com/contributor2) - Module 3
+- [Shihab Muhtasim](https://github.com/shihabmuhtasim) - Adminpanel, Vendorpanel, Login & session handelling
+- [Nusaiba Alam](https://github.com/contributor1) - User Home
+- [Sartaj](https://github.com/contributor2) - Product reviews
 
 
 
