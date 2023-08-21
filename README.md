@@ -83,7 +83,6 @@ Welcome to WearWise, an innovative e-commerce website developed as part of the C
 
 - [Shihab Muhtasim](https://github.com/shihabmuhtasim) - Adminpanel, Vendorpanel, Login & session handelling
 - [Nusaiba Alam](https://github.com/contributor1) - User Home
-- [Sartaj](https://github.com/contributor2) - Product reviews
 
 
 
