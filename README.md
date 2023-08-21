@@ -8,6 +8,9 @@
 
 Welcome to WearWise, an innovative e-commerce website developed as part of the CSE471 course project for Section 07, Group 03. WearWise offers a convenient platform for users to rent out a wide range of trendy apparel items. This README provides an overview of the website's features and modules.
 
+## Project Report
+[CSE471_report_sum23.pdf](https://github.com/shihabmuhtasim/wearwise/files/12398049/CSE471_report_sum23.pdf)
+
 ## Project Details
 
 - Course: CSE471
