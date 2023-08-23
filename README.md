@@ -90,6 +90,7 @@ Welcome to WearWise, an innovative e-commerce website developed as part of the C
 
 
 
+![card](https://github.com/shihabmuhtasim/Cse422-Artificial-Intelligence/assets/92597456/80ab22be-6699-47b1-874a-111c3746e6b5)
 
 
 ---
