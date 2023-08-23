@@ -1,4 +1,10 @@
 # WearWise - CSE471 Project
+![GitHub top language](https://img.shields.io/github/languages/top/shihabmuhtasim/wearwise?color=f5f5dc) 
+![GitHub language count](https://img.shields.io/github/languages/count/shihabmuhtasim/wearwise?color=f5f5dc) 
+![GitHub last commit](https://img.shields.io/github/last-commit/shihabmuhtasim/wearwise?color=f5f5dc) 
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/shihabmuhtasim/wearwise?color=f5f5dc)
+![GitHub repo size](https://img.shields.io/github/repo-size/shihabmuhtasim/wearwise?color=f5f5dc)
+![GitHub watchers](https://img.shields.io/github/watchers/shihabmuhtasim/wearwise?style=social)
 
 ![logo](https://github.com/shihabmuhtasim/wearwise/assets/92597456/f704ca79-23e0-4019-afd1-b3146762dded)
 
