@@ -1,11 +1,21 @@
 # WearWise - CSE471 Project
+![GitHub top language](https://img.shields.io/github/languages/top/shihabmuhtasim/wearwise?color=f5f5dc) 
+![GitHub language count](https://img.shields.io/github/languages/count/shihabmuhtasim/wearwise?color=f5f5dc) 
+![GitHub last commit](https://img.shields.io/github/last-commit/shihabmuhtasim/wearwise?color=f5f5dc) 
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/shihabmuhtasim/wearwise?color=f5f5dc)
+![GitHub repo size](https://img.shields.io/github/repo-size/shihabmuhtasim/wearwise?color=f5f5dc)
+![GitHub watchers](https://img.shields.io/github/watchers/shihabmuhtasim/wearwise?style=social)
+
+![logo](https://github.com/shihabmuhtasim/wearwise/assets/92597456/f704ca79-23e0-4019-afd1-b3146762dded)
 
 
-![logo](https://github.com/shihabmuhtasim/wearwise/assets/92597456/dffe8225-566e-474f-8c09-41542b2ae16d)
 
 ## Introduction
 
 Welcome to WearWise, an innovative e-commerce website developed as part of the CSE471 course project for Section 07, Group 03. WearWise offers a convenient platform for users to rent out a wide range of trendy apparel items. This README provides an overview of the website's features and modules.
+
+## Project Report
+[CSE471_report_sum23.pdf](https://github.com/shihabmuhtasim/wearwise/files/12398049/CSE471_report_sum23.pdf)
 
 ## Project Details
 
@@ -83,8 +93,10 @@ Welcome to WearWise, an innovative e-commerce website developed as part of the C
 
 - [Shihab Muhtasim](https://github.com/shihabmuhtasim) - Adminpanel, Vendorpanel, Login & session handelling
 - [Nusaiba Alam](https://github.com/contributor1) - User Home
-- [Sartaj](https://github.com/contributor2) - Product reviews
 
+
+![tshirt](https://github.com/shihabmuhtasim/wearwise/assets/92597456/dbe8a3cf-0dc1-4381-baac-5595d25110c3)
+![card](https://github.com/shihabmuhtasim/wearwise/assets/92597456/05c321ad-e9cf-4e49-87cb-b9723ae95b46)
 
 
 
