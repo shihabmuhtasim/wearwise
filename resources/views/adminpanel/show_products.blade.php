@@ -50,7 +50,6 @@
         <th>Quantity</th>
         <th>Day count on price</th>
         <th>Vendor</th>
-        <th>Sold</th>
         <th>Edit</th>
         <th>Delete</th>
     </tr>
