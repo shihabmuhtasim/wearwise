@@ -19,9 +19,9 @@ Welcome to WearWise, an innovative e-commerce website developed as part of the C
 
 ## Project Details
 
-- Course: CSE471
-- Section: 07
-- Group: 03
+- Framework: Laravel
+- Language: PHP, HTML
+- Backend: SQL, XAMBP
 - Project Name: WearWise
 
 
