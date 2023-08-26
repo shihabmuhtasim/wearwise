@@ -95,8 +95,8 @@ Welcome to WearWise, an innovative e-commerce website developed as part of the C
 - [Nusaiba Alam](https://github.com/contributor1) - User Home
 
 
-![tshirt](https://github.com/shihabmuhtasim/wearwise/assets/92597456/dbe8a3cf-0dc1-4381-baac-5595d25110c3)
-![card](https://github.com/shihabmuhtasim/wearwise/assets/92597456/05c321ad-e9cf-4e49-87cb-b9723ae95b46)
+
+![Green Minimalist Rain Sounds Music YouTube Thumbnail (1)](https://github.com/shihabmuhtasim/wearwise/assets/92597456/c2a0acd4-ee69-4c2d-91d5-7bdb8a7dad81)
 
 
 
