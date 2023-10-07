@@ -25,7 +25,7 @@
 <!--New card Total prods-->
 @php
 
-    $proCount = $product_data->count();
+    
 @endphp
 
 
@@ -36,7 +36,7 @@
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0">{{ $proCount }} Types</h3>
+                          <h3 class="mb-0">Types</h3>
                         </div>
                       </div>
                       <div class="col-3">
@@ -56,7 +56,7 @@
 
 @php
 
-    $orderCount = $order_data->count();
+    
 @endphp
 
 
@@ -66,7 +66,7 @@
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0">{{ $orderCount }} Orders</h3>
+                          <h3 class="mb-0"> Orders</h3>
                         </div>
                       </div>
                       <div class="col-3">
@@ -83,7 +83,7 @@
 
 @php
 
-    $totalPrice = $order_data->sum('price');
+   
 @endphp
 
 
@@ -95,7 +95,7 @@
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0">{{ $totalPrice }} TK</h3>
+                          <h3 class="mb-0">TK</h3>
               
                         </div>
                       </div>
@@ -147,7 +147,7 @@ $userCount = $cus_data->count();
             <!--New card wear wise sales-->
 @php
 
-    $w_Price = $w_order->sum('price');
+ 
 @endphp
             <div class="row">
               <div class="col-sm-4 grid-margin">
@@ -157,7 +157,7 @@ $userCount = $cus_data->count();
                     <div class="row">
                       <div class="col-8 col-sm-12 col-xl-8 my-auto">
                         <div class="d-flex d-sm-block d-md-flex align-items-center">
-                          <h2 class="mb-0">{{$w_Price}} TK</h2>
+                          <h2 class="mb-0"> TK</h2>
                 
                         </div>
                         <h6 class="text-muted font-weight-normal">Original wearwise sales</h6>
@@ -170,9 +170,7 @@ $userCount = $cus_data->count();
                 </div>
               </div>
 @php
-$t_Price = $order_data->sum('price');
-$w_Price = $w_order->sum('price');
-$vp_sale= $t_Price-$w_Price
+
 
 @endphp
               <div class="col-sm-4 grid-margin">
@@ -182,7 +180,7 @@ $vp_sale= $t_Price-$w_Price
                     <div class="row">
                       <div class="col-8 col-sm-12 col-xl-8 my-auto">
                         <div class="d-flex d-sm-block d-md-flex align-items-center">
-                          <h2 class="mb-0">{{$vp_sale}} TK</h2>
+                          <h2 class="mb-0"> TK</h2>
                         </div>
                         <h6 class="text-muted font-weight-normal"> Vendor partner sales</h6>
                       </div>
@@ -196,9 +194,7 @@ $vp_sale= $t_Price-$w_Price
               <!--New card-->
 
 @php
-$t_Price1 = $order_data->sum('price');
-$w_Price2 = $w_order->sum('price');
-$vp_sale3= ($t_Price1-$w_Price2)*0.1
+
 @endphp
               <div class="col-sm-4 grid-margin">
                 <div class="card">
@@ -207,7 +203,7 @@ $vp_sale3= ($t_Price1-$w_Price2)*0.1
                     <div class="row">
                       <div class="col-8 col-sm-12 col-xl-8 my-auto">
                         <div class="d-flex d-sm-block d-md-flex align-items-center">
-                          <h2 class="mb-0">{{$vp_sale3}} TK</h2>
+                          <h2 class="mb-0"> TK</h2>
 
                         </div>
                         <h6 class="text-muted font-weight-normal">10%commision on each sale</h6>

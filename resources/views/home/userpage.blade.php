@@ -32,7 +32,7 @@
          @include('home.slider')
          <!-- end slider section -->
       </div>
-      @include('home.product')
+      
 
       {{-- <div style="text-align: center; padding-bottom: 30px;">
          <h1 style="font-size: 30px; text-align: center; padding-top: 20px; padding-bottom: 20px;">Comments</h1>
