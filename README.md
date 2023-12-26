@@ -6,13 +6,13 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/shihabmuhtasim/wearwise?color=f5f5dc)
 ![GitHub watchers](https://img.shields.io/github/watchers/shihabmuhtasim/wearwise?style=social)
 
-![logo](https://github.com/shihabmuhtasim/wearwise/assets/92597456/f704ca79-23e0-4019-afd1-b3146762dded)
-
 
 
 ## Introduction
 
 Welcome to WearWise, an innovative e-commerce website developed as part of the CSE471 course project for Section 07, Group 03. WearWise offers a convenient platform for users to rent out a wide range of trendy apparel items. This README provides an overview of the website's features and modules.
+
+![wearwise](https://github.com/shihabmuhtasim/wearwise--A-cloth-rental-website-in-Laravel/assets/92597456/4efb8489-363c-47e8-b6b8-3db34567797b)
 
 ## Project Report
 [CSE471_report_sum23.pdf](https://github.com/shihabmuhtasim/wearwise/files/12398049/CSE471_report_sum23.pdf)
