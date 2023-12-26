@@ -96,7 +96,7 @@ Welcome to WearWise, an innovative e-commerce website developed as part of the C
 
 
 
-![Green Minimalist Rain Sounds Music YouTube Thumbnail (1)](https://github.com/shihabmuhtasim/wearwise/assets/92597456/c2a0acd4-ee69-4c2d-91d5-7bdb8a7dad81)
+
 
 
 
